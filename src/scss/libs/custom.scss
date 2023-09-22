@@ -85,9 +85,9 @@
   --bs-border-color-translucent: #cfc8be;
   --bs-border-radius: 0.3125rem;
   --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.625rem;
-  --bs-border-radius-xl: 1rem;
-  --bs-border-radius-2xl: 2rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.25rem;
+  --bs-border-radius-2xl: 3.75rem;
   --bs-border-radius-pill: 50rem;
   --bs-link-color: #000;
   --bs-link-hover-color: #2b579a;
@@ -97,5 +97,5 @@
   --bs-btn-hover-bg: transparent;
 }
 .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-  max-width: 1160px;
+  max-width: 1184px;
 }
