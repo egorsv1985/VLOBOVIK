@@ -1,0 +1,10 @@
+.footer {
+  // background-color: #f6f3ee;
+  @include media(min, lg) {
+    // background-color: transparent;
+  }
+  &__link {
+    background: url("@img/icons/place.svg") no-repeat center / cover;
+    @include wh(50px);
+  }
+}
