@@ -13,7 +13,7 @@
 // @import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "IBM Plex Sans";
+$fontFamily: "Inter";
 $fontSize: rem(16); // где 16(px) - размер шрифта по умолчанию из макета
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
@@ -143,40 +143,27 @@ $grid_breakpoints: (
 @import "./components/text";
 @import "./components/buttons";
 
-// pages
-@import "./pages/home";
+
 
 
 
 // sections
-@import "./sections/promo";
-@import "./sections/about";
-@import "./sections/plans";
-@import "./sections/community";
-@import "./sections/gallery";
-@import "./sections/cards";
-@import "./sections/teams";
-@import "./sections/contacts";
-@import "./sections/vacancies";
-@import "./sections/events";
-@import "./sections/services-item";
-@import "./sections/directions";
-@import "./sections/trainers";
-@import "./sections/forms";
+// @import "./sections/promo";
+
 
 
 // @import "./components/social";
 // @import "./components/scroll-header";
-@import "./blocks/social";
+// @import "./blocks/social";
 // sections
 
 // @import "./sections/contacts";
 
-@import "./components/popup";
+// @import "./components/popup";
 
 // block
 @import "header";
 @import "footer";
 // @import "./blocks/nav";
 // @import "./blocks/logo";
-@import "./blocks/open-burger";
+// @import "./blocks/open-burger";
