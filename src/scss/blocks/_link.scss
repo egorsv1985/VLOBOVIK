@@ -1,0 +1,22 @@
+.link {
+	&--a1::before{
+		  content: "";
+		  display: block;
+		  width: 15px;
+		  height: 15px;
+		  background: url("@img/A1.png") no-repeat center / cover;
+		  position: absolute;
+		  right: 0;
+		  top: 0;
+		}
+	&--mtc::before{
+		  content: "";
+		  display: block;
+		  width: 15px;
+		  height: 15px;
+		  background: url("@img/MTC.png") no-repeat center / cover;
+		  position: absolute;
+		  right: 0;
+		  top: 0;
+		}
+}

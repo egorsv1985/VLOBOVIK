@@ -1,0 +1,58 @@
+.box {
+
+  &--address::before {
+	  content: "";
+	  display: block;
+	  width: 14px;
+	  height: 20px;
+	  background: url("@img/icons/address.svg") no-repeat center / cover;
+	  position: absolute;
+	  left: -18px;
+	  top: 0;
+  }
+  &--address::after{
+	  content: "";
+	  display: block;
+	  width: 1px;
+	  height: 100%;
+	  background-color: #E4E4E4;
+	  position: absolute;
+	  right: 20%;
+	  top: 50%;
+	  transform: translateY(-50%);
+  }
+  &--phone::before {
+	  content: "";
+	  display: block;
+	  width: 19px;
+	  height: 19px;
+	  background: url("@img/icons/phone.svg") no-repeat center / cover;
+	  position: absolute;
+	  left: -18px;
+	  top: 0;
+  }
+  &--phone::after{
+	content: "";
+	display: block;
+	width: 1px;
+	height: 100%;
+	background-color: #E4E4E4;
+	position: absolute;
+	right: 35%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+  &--time::before {
+	  content: "";
+	  display: block;
+	  width: 19px;
+	  height: 19px;
+	  background: url("@img/icons/time.svg") no-repeat center / cover;
+	  position: absolute;
+	  left: -18px;
+	  top: 0;
+  }
+}
+
+
+  

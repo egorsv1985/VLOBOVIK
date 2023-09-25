@@ -5,20 +5,11 @@
   // .header__burger
   &__burger {
   }
-  &__btn-shedule {
-    display: none;
-    @include media(min, md) {
-      display: block;
-    }
-  }
+  
   &__box-logo {
     z-index: 50;
   }
-  // .header__box-work
-  &__box-work {
-    display: none;
-    color: #fff;
-  }
+ 
   // .header__link
   &__link {
     &--work {
@@ -173,3 +164,24 @@
     overflow: auto;
   }
 }
+
+
+
+.header {
+  // .header__top
+  &__top {}
+  // .header__box
+  &__box {}
+  // .header__link
+  &__link {}
+  // .header__bottom
+  &__bottom {}
+  // .header__burger
+  &__burger {}
+}
+
+
+
+
+
+

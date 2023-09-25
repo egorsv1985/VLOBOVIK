@@ -288,62 +288,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }, delay);
     }
   };
-// Обработчик клика на элемент с классом "burger"
-function handleBurgerClick() {
-  // Получаем элементы с классами "burger" и "header__services" через document.querySelector
-  const burger = document.querySelector(".burger");
-  const headerServices = document.querySelector(".header__services");
+  // Обработчик клика на элемент с классом "burger"
+  function handleBurgerClick() {
+    // Получаем элементы с классами "burger" и "header__services" через document.querySelector
+    const burger = document.querySelector(".burger");
 
-  // Переменная для отслеживания состояния "headerServices" (открыто или закрыто)
-  let isHeaderServicesOpen = false;
+    // Проверяем, существует ли элемент с классом "burger"
+    if (burger) {
+      // Добавляем обработчик события клика на элемент "burger"
+      burger.addEventListener("click", function () {
+        if (scrollLocked) {
+          unlockScroll();
+          console.log("Скролл разблокирован");
+        } else {
+          lockScroll();
+          console.log("Скролл заблокирован");
+        }
 
-  // Функция для переключения состояния "headerServices"
-  function toggleHeaderServices() {
-    // Инвертируем значение isHeaderServicesOpen
-    isHeaderServicesOpen = !isHeaderServicesOpen;
-    console.log('isHeaderServicesOpen' + isHeaderServicesOpen);
-    // Добавляем или удаляем класс "open" в зависимости от значения isHeaderServicesOpen
-    headerServices.classList.toggle("open", isHeaderServicesOpen);
+        // Добавляем/удаляем класс "open" у элемента html
+        document.documentElement.classList.toggle("open");
+      });
+    }
   }
 
-  // Проверяем, существует ли элемент с классом "burger"
-  if (burger) {
-    // Добавляем обработчик события клика на элемент "burger"
-    burger.addEventListener("click", function () {
-
-      if (scrollLocked) {
-        unlockScroll();
-        console.log("Скролл разблокирован");
-      } else {
-        lockScroll();
-        console.log("Скролл заблокирован");
-      }
-
-      // Добавляем/удаляем класс "open" у элемента html
-      document.documentElement.classList.toggle("open");
-
-      // Если класс "open" у элемента html был удален, удаляем его также у элемента с классом "header__services"
-      if (!document.documentElement.classList.contains("open")) {
-        headerServices.classList.remove("open");
-        // Сбрасываем значение isHeaderServicesOpen на false при закрытии "header__services"
-        isHeaderServicesOpen = false;
-      }
-    });
-  }
-
-  // Получаем элемент с классом "service-item" через document.querySelector
-  const serviceItem = document.querySelector(".header__service-item");
-
-  // Проверяем, существует ли элемент с классом "header__services"
-  if (headerServices && serviceItem) {
-    // Добавляем обработчик события клика на элемент "service-item"
-    serviceItem.addEventListener("click", toggleHeaderServices);
-  }
-}
-
-// Вызываем функцию handleBurgerClick для обработки кликов на элементы "burger" и "service__item"
-handleBurgerClick();
-
+  // Вызываем функцию handleBurgerClick для обработки кликов на элементы "burger" и "service__item"
+  handleBurgerClick();
 
   // Определение поддержки формата WebP и добавление класса "webp" или "no-webp" в зависимости от поддержки
   ((callback) => {
@@ -362,4 +331,3 @@ handleBurgerClick();
     document.documentElement.classList.add(supported ? "webp" : "no-webp")
   );
 });
-
