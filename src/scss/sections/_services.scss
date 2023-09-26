@@ -1,0 +1,25 @@
+.services {
+  // .services__box-img
+  &__box-img {
+  }
+  // .services__text
+  &__text {
+    bottom: 8%;
+    left: 5%;
+  }
+  &__link {
+    &::before {
+      content: "";
+      display: block;
+      background: url("@img/icons/arrow-services.svg") no-repeat center / 17px
+        11px;
+      position: absolute;
+      bottom: 8%;
+      right: 5%;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid #fff;
+    }
+  }
+}
