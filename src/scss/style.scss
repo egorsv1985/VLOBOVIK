@@ -32,7 +32,7 @@ $containerPadding: 30;
 // 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
 $responsiveType: 1;
 
-// Ширина страбатывания первого брейкпоинта
+// Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
@@ -75,9 +75,14 @@ $grid_breakpoints: (
     min-width: 0;
   }
 }
+.sales {
+  background: url("@img/discount-foto.png") no-repeat right center / 53% 100% #eee;
+  @include media(max, lg) {
+    background-image: none;
+  }
+}
 
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
-
 
 // Подключение стилей общих элементов проекта
 @import "common";
@@ -93,17 +98,11 @@ $grid_breakpoints: (
 @import "./components/line";
 // @import "./components/buttons";
 
-
-
-
-
 // sections
 @import "./sections/promo";
 @import "./sections/choose";
 @import "./sections/services";
 @import "./sections/install";
-
-
 
 // @import "./components/social";
 // @import "./components/scroll-header";
@@ -114,8 +113,6 @@ $grid_breakpoints: (
 
 // @import "./components/popup";
 
-
-
 // block
 @import "header";
 @import "footer";
@@ -123,4 +120,3 @@ $grid_breakpoints: (
 // @import "./blocks/logo";
 @import "./blocks/box";
 @import "./blocks/link";
-
