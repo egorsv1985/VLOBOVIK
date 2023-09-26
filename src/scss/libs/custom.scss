@@ -161,3 +161,13 @@
 .card-header:first-child {
   border-radius: 1rem;
 }
+
+.form-label {
+  transform: translateY(-50%);
+  left: 20px;
+  opacity: 1;
+}
+.form-control:focus ~ .form-label,
+.form-control:valid ~ .form-label {
+  opacity: 0;
+}

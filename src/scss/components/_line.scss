@@ -1,0 +1,56 @@
+.line{
+	width: 1px;
+  height: 90px; 
+  border-left: 1px dashed #2B579A;
+  &::after,
+  &::before{
+	  content: "";
+	  display: block;
+	  border-radius: 50%;
+	  position: absolute;
+	  left: 0%;
+	  transform: translateX(-50%);
+
+  }
+  &::after{
+	width: 4px;
+	height: 4px;
+	background-color: #2B579A;
+	bottom: 0%;
+
+  }
+  &::before{
+	width: 28px;
+	height: 28px;
+	background: url("@img/icons/circle.svg") no-repeat center / cover;
+	top: -30%;
+  }
+  &__info{
+	top: -60%;
+	left: 0%;
+	  transform: translateX(-50%);
+  }
+  &--frontal{
+	top: -4%;
+	left: 42%;
+
+  }
+  &--side{
+	top: 0%;
+	right: 25%;
+  }
+  &--back{
+	top: -8%;
+    right: 14%;
+	.line{
+		height: 160px;
+		&::before{
+			top: -10%;
+		}
+		&__info{
+			top: -30%;
+		}
+	}
+	
+  }
+}

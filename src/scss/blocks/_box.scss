@@ -7,17 +7,15 @@
     height: 100%;
     background-color: #e4e4e4;
     position: absolute;
-  
+
     top: 50%;
     transform: translateY(-50%);
   }
-  &--address::after{
-	right: 20%;
+  &--address::after {
+    right: 20%;
   }
 
   &--phone::after {
-    
     right: 35%;
-   
   }
 }

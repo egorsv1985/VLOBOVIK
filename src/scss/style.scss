@@ -67,7 +67,7 @@ $grid_breakpoints: (
   // Прижимаем footer
   > main {
     flex: 1 1 auto;
-    // padding-top: 74px;
+    padding-top: 170px;
   }
 
   // Фикс для слайдеров
@@ -90,7 +90,7 @@ $grid_breakpoints: (
 @import "./components/burger";
 @import "./components/swiper";
 @import "./components/open-burger";
-// @import "./components/text";
+@import "./components/line";
 // @import "./components/buttons";
 
 
@@ -98,7 +98,7 @@ $grid_breakpoints: (
 
 
 // sections
-// @import "./sections/promo";
+@import "./sections/promo";
 
 
 
@@ -120,3 +120,4 @@ $grid_breakpoints: (
 // @import "./blocks/logo";
 @import "./blocks/box";
 @import "./blocks/link";
+
