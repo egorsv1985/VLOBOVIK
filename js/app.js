@@ -1424,7 +1424,7 @@
           : e.emit(`slidePrevTransition${i}`);
     }
   }
-  const z = {
+  const _ = {
     slideTo: function (e = 0, t = this.params.speed, s = !0, i, r) {
       "string" == typeof e && (e = parseInt(e, 10));
       const n = this;
@@ -1692,7 +1692,7 @@
       } else e.slideTo(n);
     },
   };
-  const _ = {
+  const z = {
     loopCreate: function (e) {
       const t = this,
         { params: s, slidesEl: i } = t;
@@ -2509,8 +2509,8 @@
               I({ swiper: s, runCallbacks: e, direction: t, step: "End" }));
         },
       },
-      slide: z,
-      loop: _,
+      slide: _,
+      loop: z,
       grabCursor: {
         setGrabCursor: function (e) {
           const t = this;
@@ -3283,6 +3283,11 @@
           }),
           (t.src =
             "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA");
-      })();
+      })(),
+      document
+        .querySelector(".language__current")
+        .addEventListener("click", function () {
+          document.querySelector(".language__options").classList.toggle("open");
+        });
   });
 })();
