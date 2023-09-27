@@ -17,3 +17,13 @@
   }
  
 }
+.header {
+  // .header__language
+  &__language {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+

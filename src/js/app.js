@@ -330,4 +330,10 @@ document.addEventListener("DOMContentLoaded", function () {
   })((supported) =>
     document.documentElement.classList.add(supported ? "webp" : "no-webp")
   );
+  document
+    .querySelector(".language__current")
+    .addEventListener("click", function () {
+      const languageOptions = document.querySelector(".language__options");
+      languageOptions.classList.toggle("open");
+    });
 });

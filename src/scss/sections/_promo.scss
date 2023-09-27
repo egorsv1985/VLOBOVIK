@@ -1,34 +1,55 @@
 .promo {
   background-color: #fff;
   &__box {
-    top: 24%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    position: relative;
+    top: 20%;
     right: 5%;
-    max-width: 57%;
+    left: 5%;
+
+    @include media(min, lg) {
+      position: absolute;
+      left: 35%;
+      right: -3%;
+      margin: 0;
+    }
+    @include media(min, xl) {
+      right: -5%;
+    }
   }
   &__triangle {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 108%;
-    clip-path: polygon(100% 100%, 0% 160%, 100% 0%);
+    top: 7%;
+      left: 0%;
+      right: 0%;
+      bottom: 34%;
+    
+    clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
     background-color: rgba(43, 87, 154, 0.21);
+    @include media(min, lg) {
+      top: -9%;
+    left: 28%;
+    right: -1%;
+    bottom: -17%;
+    }
+    @include media(min, xl) {
+      right: -14%;
+    }
   }
   // .promo__box-text
   &__box-text {
     background-color: rgba(43, 87, 154, 0.46);
-    right: 0;
-    @include media(min, xl) {
-      right: 15%;
+   
+
+    position: relative;
+    @include media(min, sm) {
+      position: absolute;
+      right: -100%;
     }
   }
   // .promo__box-form
   &__box-form {
     background-color: rgba(43, 87, 154, 0.13);
   }
- 
 }
-
-
-
-

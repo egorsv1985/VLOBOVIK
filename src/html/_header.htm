@@ -52,11 +52,16 @@
         </div>
       </div>
       <div class="col-lg-1 col-3 col-sm-2">
-        <select class="form-select mb-2 text-end" aria-label="language select">
-          <option selected="">рус</option>
-          <option value="1">en</option>
-        </select>
-        <ul class="d-flex align-items-center justify-content-between p-0 m-0 gap-1">
+        <div class="header__language language w-100 mb-2">
+          <div class="language__current text-end pe-2">рус</div>
+          <ul class="language__options ff-roboto end-0 gap-1 py-1 px-2">
+            <li data-lang="рус">рус</li>
+            <li data-lang="бел">бел</li>
+          </ul>
+        </div>
+        <ul
+          class="d-flex align-items-center justify-content-between p-0 m-0 gap-1"
+        >
           <li>
             <a href="#" class=""
               ><img src="@img/viber.png" alt="" class=""
@@ -71,7 +76,7 @@
       </div>
     </div>
     <div class="pt-3 row">
-      <a href="/" class="d-block col-3 col-xl-4">
+      <a href="/" class="d-block col-6 col-lg-3 col-xl-4">
         <img src="@img/icons/logo.svg" alt="logo" class="mw-100" />
       </a>
       <button type="button" class="col d-block d-lg-none burger button">
@@ -111,3 +116,4 @@
     </div>
   </div>
 </header>
+
