@@ -15,7 +15,7 @@
       margin: 0;
     }
     @include media(min, xl) {
-      right: -5%;
+      right: -8%;
     }
   }
   &__triangle {
@@ -45,7 +45,7 @@
     position: relative;
     @include media(min, sm) {
       position: absolute;
-      right: -100%;
+      right: -80%;
     }
   }
   // .promo__box-form
