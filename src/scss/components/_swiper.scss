@@ -22,7 +22,7 @@
 .swiper-button-next {
   right: 0;
   @include media (min, xl) {
-    right: -3%;
+    right: -40px;
   }
   transform: translateX(-50%);
   &::after {
@@ -32,15 +32,17 @@
 .swiper-button-prev {
   left: 0;
   @include media (min, xl) {
-    left: -4%;
+    left: -50px;
   }
  
 }
 .swiper__control{
-  width: 50%;
+  width: 40%;
+  max-width: 150px;
   @include media (min, lg) {
     position: absolute;
     top: 50%;
     width: 100%;
+    max-width: 100%;
   }
 }

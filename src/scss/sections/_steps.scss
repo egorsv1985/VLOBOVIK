@@ -31,7 +31,7 @@
     &::after {
       @include media(min, md) {
         border-top: 1px dashed #2b579a;
-        width: 50px;
+        width: calc(var(--bs-gutter-x) * 1);
         height: 1px;
         right: calc(var(--bs-gutter-x) * -1.03);
       }

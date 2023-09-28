@@ -63,6 +63,11 @@
       right: 0;
     }
   }
+  &__box-content{
+    &:nth-child(odd) {
+      opacity: 0.6;
+    }
+  }
   // .choose__box-text
   &__box-text {
     background-color: rgba(43, 87, 154, 0.3);

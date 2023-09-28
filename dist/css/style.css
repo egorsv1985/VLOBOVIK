@@ -643,7 +643,7 @@ body.popup-show::after {
 }
 @media only screen and (min-width: 1199px) {
   .swiper-button-next {
-    right: -3%;
+    right: -40px;
   }
 }
 .swiper-button-next::after {
@@ -655,18 +655,20 @@ body.popup-show::after {
 }
 @media only screen and (min-width: 1199px) {
   .swiper-button-prev {
-    left: -4%;
+    left: -50px;
   }
 }
 
 .swiper__control {
-  width: 50%;
+  width: 40%;
+  max-width: 150px;
 }
 @media only screen and (min-width: 991px) {
   .swiper__control {
     position: absolute;
     top: 50%;
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -904,6 +906,9 @@ body.popup-show::after {
   bottom: 0%;
   right: 0;
 }
+.choose__box-content:nth-child(odd) {
+  opacity: 0.6;
+}
 .choose__box-text {
   background-color: rgba(43, 87, 154, 0.3);
 }
@@ -1072,7 +1077,7 @@ body.popup-show::after {
 @media only screen and (min-width: 767px) {
   .steps__box::after {
     border-top: 1px dashed #2b579a;
-    width: 50px;
+    width: calc(var(--bs-gutter-x) * 1);
     height: 1px;
     right: calc(var(--bs-gutter-x) * -1.03);
   }
@@ -1104,23 +1109,13 @@ body.popup-show::after {
 .faq__box-circle {
   width: 36px;
   height: 36px;
-}
-.faq__box-circle::before {
-  content: "";
-  display: block;
-  background: url("../img/icons/plus.svg") no-repeat center/cover;
-  width: 21px;
-  height: 21px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  background: url("../img/icons/plus.svg") no-repeat center/21px 21px;
+  right: 2%;
+  top: 6%;
   transition: all 0.3s ease-in-out;
 }
-.faq .card__btn[aria-expanded=true] .faq__box-circle::before {
-  width: 21px;
-  height: 3px;
-  background: url("../img/icons/minus.svg") no-repeat center/cover;
+.faq .card__btn[aria-expanded=true] .faq__box-circle {
+  background: url("../img/icons/minus.svg") no-repeat center/21px 3px;
 }
 
 .reviews .swiper__top {
@@ -1159,11 +1154,13 @@ body.popup-show::after {
 @media only screen and (max-width: 575px) {
   .footer__box {
     width: max-content;
+    margin: 0 auto;
   }
 }
 .footer__social li {
   position: relative;
   padding-left: 2rem;
+  width: max-content;
 }
 .footer__social li::before {
   content: "";

@@ -1,54 +1,29 @@
-
 .footer {
   // .footer__box
   &__box {
-    @include media (max, sm) {
+    @include media(max, sm) {
       width: max-content;
-     
+      margin: 0 auto;
     }
-    
-   
   }
-  
-  // .footer__link
-  &__link {}
+
   // .footer__social
   &__social {
-    li{
+    li {
       position: relative;
       padding-left: 2rem;
-      &::before{
-          content: "";
-          display: block;
-          background-color: #fff;
-          height: 1px;
-          width: 18px;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
+      width: max-content;
+      &::before {
+        content: "";
+        display: block;
+        background-color: #fff;
+        height: 1px;
+        width: 18px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
       }
     }
-   
   }
 }
-
-.box {
-}
-.box--map {
-}
-
-.box--time {
-}
-.link {
-}
-
-
-.link--mail {
-}
-
-.social {
-  // .social__link
-  &__link {}
-}
-
