@@ -21,14 +21,11 @@
 
     // .form__input
     &__input {
-      border-color: #fff;
-      width: 100%;
+      
+      
 
-      &:focus ~ .form__label,
-      &:valid ~ .form__label {
-        top: 50%;
-        opacity: 0;
-      }
+
+    
 
       &::placeholder {
         font-size: 16px;
@@ -44,5 +41,48 @@
     }
   }
 }
+.form-label {
+  transform: translateY(-50%);
+  left: 20px;
+  opacity: 1;
+  top: 50%;
+  
+  
+}
+.form-control:focus ~ .form-label,
+.form-control:valid ~ .form-label,
+.form-control:hover ~ .form-label {
+  opacity: 0;
+  top: 0;
 
+}
+
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: 0 10px 0 10px;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #000;
+  background-color: transparent;
+  background-image: url("@img/icons/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 6px 6px;
+  border: none;
+  border-radius: 0;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.form-select:focus,
+.form-select:focus-visible {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+}
 
