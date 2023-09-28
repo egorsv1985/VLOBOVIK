@@ -1,13 +1,9 @@
 .services {
-  // .services__box-img
-  &__box-img {
-  }
   // .services__text
   &__text {
     bottom: 8%;
     left: 5%;
     z-index: 1;
-   
   }
   &__link {
     &::after {
@@ -19,17 +15,12 @@
       top: 0;
       bottom: 0;
       background-color: rgba(19, 19, 19, 0.6);
-      
-      
-
     }
 
     &:hover {
-      &::after{
+      &::after {
         display: none;
       }
-      
-     
     }
     &::before {
       content: "";

@@ -1,4 +1,15 @@
 .steps {
+  //  Делаем все колонки одинаковой высоты, равной максимальной высоте в ряду
+  &__col {
+    &:last-child {
+      .steps__box {
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
   // .steps__counter
   &__counter {
     color: rgba(43, 87, 154, 0.19);
@@ -6,34 +17,33 @@
   // .steps__box
   &__box {
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    min-height: 185px;
-	
+
     &::after,
     &::before {
-      content: "";
-      display: block;
-	  top: 43%;
-	  transform: translateY(-50%);
-      position: absolute;
-      
-      
+      @include media(min, md) {
+        content: "";
+        display: block;
+        top: 43%;
+        transform: translateY(-50%);
+        position: absolute;
+      }
     }
     &::after {
-      border-top: 1px dashed #2b579a;
-      width: 50px;
-      height: 1px;
-	  right: -18%;
+      @include media(min, md) {
+        border-top: 1px dashed #2b579a;
+        width: 50px;
+        height: 1px;
+        right: calc(var(--bs-gutter-x) * -1.03);
+      }
     }
     &::before {
-      width: 20px;
-      height: 20px;
-	  border-radius: 50%;
-	  right: -21%;
-      background: url("@img/icons/circle.svg") no-repeat center / cover;
-     
+      @include media(min, md) {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        right: calc(var(--bs-gutter-x) * -1.2);
+        background: url("@img/icons/circle.svg") no-repeat center / cover;
+      }
     }
-  }
-  // .steps__box-img
-  &__box-img {
   }
 }

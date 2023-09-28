@@ -20,12 +20,21 @@
   }
 }
 .swiper-button-next {
-  right: -2%;
+  right: 0;
+  transform: translateX(-50%);
   &::after {
     transform: rotate(180deg);
   }
 }
 .swiper-button-prev {
-  left: -2%;
+  left: 0;
  
+}
+.swiper__control{
+  width: 50%;
+  @include media (min, lg) {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
 }
