@@ -21,6 +21,9 @@
 }
 .swiper-button-next {
   right: 0;
+  @include media (min, xl) {
+    right: -3%;
+  }
   transform: translateX(-50%);
   &::after {
     transform: rotate(180deg);
@@ -28,6 +31,9 @@
 }
 .swiper-button-prev {
   left: 0;
+  @include media (min, xl) {
+    left: -4%;
+  }
  
 }
 .swiper__control{
