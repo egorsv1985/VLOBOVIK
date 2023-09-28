@@ -1118,7 +1118,8 @@ body.popup-show::after {
 
 .form-control:focus ~ .form-label,
 .form-control:valid ~ .form-label,
-.form-control:hover ~ .form-label {
+.form-control:hover ~ .form-label,
+.form-control:active ~ .form-label {
   opacity: 0;
   top: 0;
 }
