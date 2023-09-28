@@ -1,0 +1,76 @@
+<section class="portfolio my-5 py-5" id="portfolio">
+	<div class="container position-relative">
+		<h2 class="fs-32 fw-600 lh-15 text-center mb-4">Наши кейсы</h2>
+		<div class="swiper portfolioSwiper mb-3">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="swiper__box-img d-block">
+						<img src="img/case-1.png" alt="" class="d-block w-100 h-100">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper__box-img d-block">
+						<img src="img/case-2.png" alt="" class="d-block w-100 h-100">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper__box-img d-block">
+						<img src="img/case-3.png" alt="" class="d-block w-100 h-100">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper__box-img d-block">
+						<img src="img/case-1.png" alt="" class="d-block w-100 h-100">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper__box-img d-block">
+						<img src="img/case-2.png" alt="" class="d-block w-100 h-100">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper__box-img d-block">
+						<img src="img/case-3.png" alt="" class="d-block w-100 h-100">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper__control d-flex justify-content-between gap-4">
+			<div class="swiper-button-prev rounded-circle border-primary border"></div>
+			<div class="swiper-button-next rounded-circle border-primary border"></div>
+		</div>
+	</div>
+</section>
+<script>
+	// выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
+	var swiper = new Swiper(".portfolioSwiper", {
+		// задаем количество слайдов, которые будут показываться одновременно
+		slidesPerView: 1,
+		// Responsive breakpoints
+		breakpoints: {
+			// when window width is >= 992px
+			576: {
+				slidesPerView: 2,
+
+			},
+			// when window width is >= 992px
+			992: {
+				slidesPerView: 3,
+
+			},
+		},
+		// включаем курсор в виде "руки" при наведении на слайды
+		grabCursor: true,
+		// включаем использование клавиатуры для навигации по слайдам
+		keyboard: {
+			enabled: true,
+		},
+		loop: true,
+
+		// включаем кнопки "вперед" и "назад" для навигации по слайдам
+		navigation: {
+			nextEl: ".portfolio .swiper-button-next",
+			prevEl: ".portfolio .swiper-button-prev",
+		},
+	});
+</script>
