@@ -1,0 +1,163 @@
+<section class="reviews my-5 py-5" id="reviews">
+	<div class="container position-relative">
+		<h2 class="fs-32 lh-15 fw-600 text-center mb-5">Отзывы</h2>
+		<div class="swiper reviewsSwiper mb-3">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide p-1">
+					<div class="swiper__top p-3 rounded-3">
+						<div class="d-flex gap-4 mb-4">
+							<div class="swiper__box-img d-block">
+								<img src="img/icons/quotes.svg" alt="" class="d-block" />
+							</div>
+							<div class="swiper__info d-flex flex-column">
+								<div class="fs-20 fw-600">Руслан Б.</div>
+								<div class="d-block">
+									<img src="img/icons/stars.svg" alt="" class="" />
+								</div>
+							</div>
+						</div>
+						<div class="fs-18 lh-15">
+							По телефону обо всем договорились,приехал на место и через час
+							уехал с новым стеклом. Быстро,профессионально. Рекомендую
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide p-1">
+					<div class="swiper__top p-3 rounded-3">
+						<div class="d-flex gap-4 mb-4">
+							<div class="swiper__box-img d-block">
+								<img src="img/icons/quotes.svg" alt="" class="d-block" />
+							</div>
+							<div class="swiper__info d-flex flex-column">
+								<div class="fs-20 fw-600">Артём К.</div>
+								<div class="d-block">
+									<img src="img/icons/stars.svg" alt="" class="" />
+								</div>
+							</div>
+						</div>
+						<div class="fs-18 lh-15">
+							Профессионалы, хорошо знают своё дело. Ответили на все
+							интересующие вопросы, сделали лучшую цену. Рекомендую!
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide p-1">
+					<div class="swiper__top p-3 rounded-3">
+						<div class="d-flex gap-4 mb-4">
+							<div class="swiper__box-img d-block">
+								<img src="img/icons/quotes.svg" alt="" class="d-block" />
+							</div>
+							<div class="swiper__info d-flex flex-column">
+								<div class="fs-20 fw-600">Евгений Ф.</div>
+								<div class="d-block">
+									<img src="img/icons/stars.svg" alt="" class="" />
+								</div>
+							</div>
+						</div>
+						<div class="fs-18 lh-15">
+							Производили замену лобового стекла. Подсказали какое стекло
+							выбрать, выполнили работу быстро, качественно и без нареканий.
+							Осталась довольна
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide p-1">
+					<div class="swiper__top p-3 rounded-3">
+						<div class="d-flex gap-4 mb-4">
+							<div class="swiper__box-img d-block">
+								<img src="img/icons/quotes.svg" alt="" class="d-block" />
+							</div>
+							<div class="swiper__info d-flex flex-column">
+								<div class="fs-20 fw-600">Руслан Б.</div>
+								<div class="d-block">
+									<img src="img/icons/stars.svg" alt="" class="" />
+								</div>
+							</div>
+						</div>
+						<div class="fs-18 lh-15">
+							По телефону обо всем договорились,приехал на место и через час
+							уехал с новым стеклом. Быстро,профессионально. Рекомендую
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide p-1">
+					<div class="swiper__top p-3 rounded-3">
+						<div class="d-flex gap-4 mb-4">
+							<div class="swiper__box-img d-block">
+								<img src="img/icons/quotes.svg" alt="" class="d-block" />
+							</div>
+							<div class="swiper__info d-flex flex-column">
+								<div class="fs-20 fw-600">Артём К.</div>
+								<div class="d-block">
+									<img src="img/icons/stars.svg" alt="" class="" />
+								</div>
+							</div>
+						</div>
+						<div class="fs-18 lh-15">
+							Профессионалы, хорошо знают своё дело. Ответили на все
+							интересующие вопросы, сделали лучшую цену. Рекомендую!
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide p-1">
+					<div class="swiper__top p-3 rounded-3">
+						<div class="d-flex gap-4 mb-4">
+							<div class="swiper__box-img d-block">
+								<img src="img/icons/quotes.svg" alt="" class="d-block" />
+							</div>
+							<div class="swiper__info d-flex flex-column">
+								<div class="fs-20 fw-600">Евгений Ф.</div>
+								<div class="d-block">
+									<img src="img/icons/stars.svg" alt="" class="" />
+								</div>
+							</div>
+						</div>
+						<div class="fs-18 lh-15">
+							Производили замену лобового стекла. Подсказали какое стекло
+							выбрать, выполнили работу быстро, качественно и без нареканий.
+							Осталась довольна
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="swiper__control d-flex justify-content-between gap-4">
+			<div class="swiper-button-prev rounded-circle border-primary border"></div>
+			<div class="swiper-button-next rounded-circle border-primary border"></div>
+		</div>
+	</div>
+</section>
+<script>
+	// выбираем элемент с классом "primeSwiper" и создаем новый Swiper объект
+	var swiper = new Swiper(".reviewsSwiper", {
+		// задаем количество слайдов, которые будут показываться одновременно
+		slidesPerView: 1,
+		// Responsive breakpoints
+		breakpoints: {
+			// when window width is >= 768px
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			// when window width is >= 768px
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 44,
+			},
+		},
+
+		// включаем курсор в виде "руки" при наведении на слайды
+		grabCursor: true,
+		// включаем использование клавиатуры для навигации по слайдам
+		keyboard: {
+			enabled: true,
+		},
+		loop: true,
+
+		// включаем кнопки "вперед" и "назад" для навигации по слайдам
+		navigation: {
+			nextEl: ".reviews .swiper-button-next",
+			prevEl: ".reviews .swiper-button-prev",
+		},
+	});
+</script>

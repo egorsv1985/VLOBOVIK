@@ -1,0 +1,91 @@
+<section class="partners my-5 position-relative">
+	<div class="container">
+		<div class="row g-4">
+			<div class="swiper partnersSwiper mb-3">
+				<div class="swiper-wrapper justify-content-between">
+					<div class="swiper-slide d-flex align-items-end justify-content-center">
+						<img src="img/pilkington.png" alt="" class="mw-100 w-auto h-auto" width="122" height="62" />
+					</div>
+					<div class="swiper-slide d-flex align-items-end justify-content-center">
+						<img src="img/lemson.png" alt="" class="mw-100 w-auto h-auto" width="148" height="26" />
+					</div>
+					<div class="swiper-slide d-flex align-items-end justify-content-center">
+						<img src="img/xyg.png" alt="" class="mw-100 w-auto h-auto" width="163" height="45" />
+					</div>
+					<div class="swiper-slide d-flex align-items-end justify-content-center">
+						<img src="img/nordclass.png" alt="" class="mw-100 w-auto h-auto" width="251" height="47" />
+					</div>
+					<div class="swiper-slide d-flex align-items-end justify-content-center">
+						<img src="img/agc.png" alt="" class="mw-100 w-auto h-auto" width="83" height="30" />
+					</div>
+					<div class="swiper-slide d-flex align-items-end justify-content-center">
+						<img src="img/saint-gobain.png" alt="" class="mw-100 w-auto h-auto" width="183" height="56" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<script>
+	// // выбираем элемент с классом "partners" и создаем новый Swiper объект
+	// var swiper = new Swiper(".partnersSwiper", {
+	//   // задаем количество слайдов, которые будут показываться одновременно
+	//   slidesPerView: 10,
+	//   spaceBetween: 20,
+
+	//   // включаем курсор в виде "руки" при наведении на слайды
+	//   grabCursor: true,
+	//   // включаем использование клавиатуры для навигации по слайдам
+	//   keyboard: {
+	//     enabled: true,
+	//   },
+	//   loop: true,
+
+	//   // Добавляем опцию для автопрокрутки
+	//   autoplay: {
+	//     delay: 2000, // Задайте задержку в миллисекундах между слайдами
+	//   },
+	//   // включаем кнопки "вперед" и "назад" для навигации по слайдам
+	//   navigation: {
+	//     nextEl: ".partners .swiper-button-next",
+	//     prevEl: ".partners .swiper-button-prev",
+	//   },
+	// });
+	// Функция для определения количества отображаемых слайдов в зависимости от ширины экрана
+	function updateSlidesPerView() {
+		if (window.innerWidth >= 992) {
+			swiper.params.slidesPerView = 6; // На больших экранах отображаем 4 слайда
+		} else if (window.innerWidth >= 768) {
+			swiper.params.slidesPerView = 3; // На средних экранах отображаем 3 слайда
+		} else {
+			swiper.params.slidesPerView = 2; // На маленьких экранах отображаем 2 слайда
+		}
+		swiper.update(); // Обновляем Swiper
+	}
+
+	// Создаем Swiper
+	var swiper = new Swiper(".partnersSwiper", {
+		slidesPerView: 6, // Начальное количество отображаемых слайдов
+		spaceBetween: 20,
+		grabCursor: true,
+		keyboard: {
+			enabled: true,
+		},
+		loop: true,
+		autoplay: {
+			delay: 2000,
+		},
+		// navigation: {
+		//   nextEl: ".partners .swiper-button-next",
+		//   prevEl: ".partners .swiper-button-prev",
+		// },
+	});
+
+	// Вызываем функцию для определения количества отображаемых слайдов при загрузке страницы
+	updateSlidesPerView();
+
+	// Добавляем обработчик события изменения размера экрана
+	window.addEventListener("resize", updateSlidesPerView);
+</script>
