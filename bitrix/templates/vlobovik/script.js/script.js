@@ -1,38 +1,38 @@
 (() => {
   "use strict";
-  let e = !0,
-    t = (t = 500) => {
-      let s = document.querySelector("body");
-      if (e) {
-        let i = document.querySelectorAll("[data-lp]");
-        setTimeout(() => {
-          for (let e = 0; e < i.length; e++) {
-            i[e].style.paddingRight = "0px";
-          }
-          (s.style.paddingRight = "0px"),
-            document.documentElement.classList.remove("lock");
-        }, t),
-          (e = !1),
-          setTimeout(function () {
-            e = !0;
-          }, t);
-      }
-    },
-    s = (t = 500) => {
-      let s = document.querySelector("body");
-      if (e) {
-        let i = document.querySelectorAll("[data-lp]");
-        for (let e = 0; e < i.length; e++) {
-          i[e].style.paddingRight = "0px";
-        }
-        (s.style.paddingRight = "0px"),
-          document.documentElement.classList.add("lock"),
-          (e = !1),
-          setTimeout(function () {
-            e = !0;
-          }, t);
-      }
-    };
+  // let e = !0,
+  //   t = (t = 500) => {
+  //     let s = document.querySelector("body");
+  //     if (e) {
+  //       let i = document.querySelectorAll("[data-lp]");
+  //       setTimeout(() => {
+  //         for (let e = 0; e < i.length; e++) {
+  //           i[e].style.paddingRight = "0px";
+  //         }
+  //         (s.style.paddingRight = "0px"),
+  //           document.documentElement.classList.remove("lock");
+  //       }, t),
+  //         (e = !1),
+  //         setTimeout(function () {
+  //           e = !0;
+  //         }, t);
+  //     }
+  //   },
+  //   s = (t = 500) => {
+  //     let s = document.querySelector("body");
+  //     if (e) {
+  //       let i = document.querySelectorAll("[data-lp]");
+  //       for (let e = 0; e < i.length; e++) {
+  //         i[e].style.paddingRight = "0px";
+  //       }
+  //       (s.style.paddingRight = "0px"),
+  //         document.documentElement.classList.add("lock"),
+  //         (e = !1),
+  //         setTimeout(function () {
+  //           e = !0;
+  //         }, t);
+  //     }
+  //   };
   !(function () {
     let i = document.querySelector(".burger");
     i &&
