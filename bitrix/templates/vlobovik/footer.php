@@ -8,7 +8,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		<div class="row g-4 text-center text-sm-start">
 			<div class="col-12 col-sm-6 col-lg-3">
 				<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo-white.svg" alt="vlobovik" class="mw-100 h-auto mb-4">
-				<div class="lh-15">©VLOBOVIK.BY-2023</div>
+				<div class="lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('requisites_name_' . SITE_ID); ?></div>
 				<a href="#" class="d-block"><span class="lh-15">Политика конфиденциальности</span></a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
@@ -16,50 +16,49 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address-white.svg) no-repeat left top /
               14px 20px;
           ">
-					<span class="">г.Минск, ул.Масюковщина, 2А корпус 9</span>
+					<span class=""><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></span>
 				</div>
 				<div class="ff-roboto footer__box box box--time ps-4" style="
             background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/time-white.svg) no-repeat left top / 19px
               19px;
           ">
-					<span class="d-block text-nowrap">пн-сб: с 10-00 до 20-00 </span>
-					<span class="d-block">вс: выходной</span>
+					<span class="d-block text-nowrap"><?= \Victory\Options\CVictoryOptions::getOptionValue('shedule_' . SITE_ID); ?></span>
 				</div>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
-				<div class="footer__box lh-15 ff-roboto mb-1 ps-4" style="
-            background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone-white.svg) no-repeat left top /
-              19px 19px;
-          ">
-					<a href="tel:+375291663388" class="footer__link link">
+				<div class="footer__box lh-15 ff-roboto mb-1 ps-4" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone-white.svg) no-repeat left top / 19px 19px;">
+					<?
+					$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
+					?>
+					<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $A1); ?>" class="footer__link link">
 						<div class="ff-roboto">
-							<span class="d-block text-nowrap">+375(29)166-33-88 - А1 </span>
+							<span class="d-block text-nowrap"><?= $A1; ?> - А1</span>
 						</div>
 					</a>
 				</div>
 				<div class="footer__box lh-15 ff-roboto mb-1 ps-4">
-					<a href="tel:+375292560307" class="footer__link link">
+					<?
+					$MTC = \Victory\Options\CVictoryOptions::getOptionValue('MTC_' . SITE_ID);
+					?>
+					<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $MTC); ?>" class="footer__link link">
 						<div class="ff-roboto">
-							<span class="d-block text-nowrap">+375(29)256-03-07 - МТС </span>
+							<span class="d-block text-nowrap"><?= $MTC; ?> - МТС</span>
 						</div>
 					</a>
 				</div>
-				<div class="footer__box lh-15 ff-roboto mt-4 d-block ps-4" style="
-            background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/email-white.svg) no-repeat left center /
-              21px 14px;
-          ">
-					<a href="mailto:vlobovik@tut.by" class="footer__link link"><span class="lh-15">vlobovik@tut.by</span></a>
+				<div class="footer__box lh-15 ff-roboto mt-4 d-block ps-4" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/email-white.svg) no-repeat left center / 21px 14px;">
+					<a href="mailto:<?= \Victory\Options\CVictoryOptions::getOptionValue('email_' . SITE_ID); ?>" class="footer__link link"><span class="lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('email_' . SITE_ID); ?></span></a>
 				</div>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
-				<div class="text-uppercase ff-roboto mb-3">социальные сети</div>
+				<div class="text-uppercase ff-roboto mb-3"><?= GetMessage("SOCIAL") ?></div>
 				<ul class="footer__social d-flex flex-column align-items-center align-items-sm-start gap-2 ff-roboto p-0 m-0">
 					<li>
-						<a href="#">Instagram</a>
+						<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>">Instagram</a>
 					</li>
 
 					<li>
-						<a href="#">Viber</a>
+						<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>">Viber</a>
 					</li>
 				</ul>
 			</div>
@@ -128,5 +127,4 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	</div>
 </div>
 </body>
-
 </html>
