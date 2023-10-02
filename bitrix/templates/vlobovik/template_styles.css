@@ -192,6 +192,7 @@ h6 {
   font-size: inherit;
   line-height: inherit;
 }
+
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -200,7 +201,7 @@ h6 {
 }
 .wrapper > main {
   flex: 1 1 auto;
-  padding-top: 170px;
+  padding-top: 155px;
 }
 .wrapper > * {
   min-width: 0;
@@ -212,7 +213,8 @@ h6 {
   font-size: 16px;
 }
 .fs-18 {
-  font-size: 18px;
+  --font-size-18: clamp(0.88rem, 1.79vw + 0.02rem, 1.13rem);
+  font-size: var(--font-size-18);
 }
 .fs-20 {
   font-size: 20px;
@@ -230,7 +232,8 @@ h6 {
   font-size: 36px;
 }
 .fs-40 {
-  font-size: 40px;
+  --font-size-40: clamp(2.25rem, 1.56vw + 1.94rem, 2.5rem);
+  font-size: var(--font-size-40);
 }
 .fs-48 {
   font-size: 48px;
@@ -267,49 +270,73 @@ body:after {
   pointer-events: none;
   z-index: 9997;
 }
-body.popup-show:after {
+body.popup-show::after {
   opacity: 1;
 }
+
 .popup {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  -webkit-transition: visibility 0.8s ease 0s;
+  -o-transition: visibility 0.8s ease 0s;
   transition: visibility 0.8s ease 0s;
   visibility: hidden;
   pointer-events: none;
 }
-.popup__form {
-  max-width: 255px;
-}
+
 .popup_show {
   z-index: 9999;
   visibility: visible;
   overflow: auto;
   pointer-events: auto;
 }
+
 .popup_show .popup__content {
   visibility: visible;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
 }
+
 .popup__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   width: 100%;
 }
+
 .popup__content {
   visibility: hidden;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
   transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s;
   transition: transform 0.3s ease 0s;
-  padding-top: 75px;
-  padding-bottom: 60px;
+  transition:
+    transform 0.3s ease 0s,
+    -webkit-transform 0.3s ease 0s;
+  padding: 45px 20px;
   width: 100%;
-  max-width: 450px;
+  max-width: 640px;
 }
 
 .lock .popup__content {
@@ -389,6 +416,10 @@ body.popup-show:after {
 .swiper__control {
   width: 40%;
   max-width: 150px;
+}
+.price .swiper__box {
+  border: 1px solid #e8e8e8;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.1);
 }
 .open .header nav {
   left: 0;
@@ -703,11 +734,13 @@ body.popup-show:after {
   height: 36px;
   background: url(img/icons/plus.svg) no-repeat 50%/21px 21px;
   right: 2%;
-  top: 6%;
+  /* top: 25%; */
+  transform: translateY(-86%);
   transition: all 0.3s ease-in-out;
 }
 .faq .card__btn[aria-expanded="true"] .faq__box-circle {
   background: url(img/icons/minus.svg) no-repeat 50%/21px 3px;
+  /* top: 13%; */
 }
 .reviews .swiper__top {
   border-radius: 15px;
@@ -715,29 +748,7 @@ body.popup-show:after {
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.25);
   min-height: 246px;
 }
-.popup__content {
-  border-radius: 40px;
-}
-.popup__close {
-  position: absolute;
-  top: 15px;
-  left: 10px;
-}
-.popup__close svg {
-  width: 30px;
-  height: 30px;
-}
-.popup .form__body {
-  flex-direction: column;
-}
-.popup .form__input::placeholder {
-  font-size: 16px;
-  line-height: 20px;
-  color: #fff;
-}
-.popup .form__btn {
-  width: 100%;
-}
+
 .form-label {
   transform: translateY(-50%);
   left: 20px;
@@ -782,6 +793,7 @@ body.popup-show:after {
 .header {
   z-index: 999;
   background-color: #fff;
+  top: 0;
 }
 .header__top {
   border-bottom: 1px solid #e4e4e4;
@@ -793,6 +805,17 @@ body.popup-show:after {
   position: relative;
   display: inline-block;
   cursor: pointer;
+}
+.box::before{
+    content: "";
+    display: block;
+    width: 1px;   
+    background-color: #E4E4E4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
 }
 .footer__social li {
   position: relative;
@@ -869,9 +892,9 @@ body.popup-show:after {
   .choose__content:before {
     transform: translate(-50%, -50%);
   }
-  .install__grid {
-    grid-template-areas: "a b b" "c c c";
-  }
+  /* .install__grid {
+    grid-template-areas: "a a b" "c c c";
+  } */
   .steps__box:after,
   .steps__box:before {
     content: "";
@@ -918,7 +941,7 @@ body.popup-show:after {
   }
   .promo__box {
     position: absolute;
-    left: 35%;
+    left: 43%;
     right: -3%;
     margin: 0;
   }

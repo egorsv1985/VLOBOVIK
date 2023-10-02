@@ -27,3 +27,6 @@ $this->setFrameMode(true);
 					<div class="fs-18"><?= $arItem["NAME"]; ?></div>
 				</div>
 			<? endforeach; ?>
+		</div>
+	</div>
+</section>

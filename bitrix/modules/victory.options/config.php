@@ -17,13 +17,7 @@ $config = [
                     'size' => 60
                 ],
                 'shedule' => [
-                    'label' => 'Будни',
-                    'type' => 'text',
-                    'value' => '',
-                    'size' => 60
-                ],
-                'sunday' => [
-                    'label' => 'Воскресенье',
+                    'label' => 'Расписание',
                     'type' => 'text',
                     'value' => '',
                     'size' => 60
@@ -39,21 +33,14 @@ $config = [
                 //     'type' => 'include_area',
                 //     'dir' => '/include/'
                 // ],
-
-                'main_h1' => [
+                'promo_h1' => [
                     'label' => 'Заголовок',
-                    'type' => 'text',
-                    'value' => '',
-                    'size' => 60
+                    'type' => 'textarea',
+                    'cols' => 40,
+                    'rows' => 5
                 ],
-                'address_small' => [
-                    'label' => 'Краткий адрес',
-                    'type' => 'text',
-                    'value' => '',
-                    'size' => 60
-                ],
-                'city' => [
-                    'label' => 'Город',
+                'address' => [
+                    'label' => 'Адрес',
                     'type' => 'text',
                     'value' => '',
                     'size' => 60
@@ -122,5 +109,4 @@ $config = [
             ]
         ]
     ],
-
 ];

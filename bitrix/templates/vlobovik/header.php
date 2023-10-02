@@ -22,7 +22,8 @@ $asset->addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.js
 $asset->addJs('https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js');
 
 $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
-if (CModule::IncludeModule("victory.options")) {}
+if (CModule::IncludeModule("victory.options")) {
+}
 
 ?>
 
@@ -52,51 +53,45 @@ if (CModule::IncludeModule("victory.options")) {}
 	<body>
 
 		<div class="wrapper">
-			<header class="header pt-4 w-100 position-fixed">
+			<header class="header w-100 position-fixed">
 				<div class="container">
 					<div class="header__top row py-3 justify-content-between align-items-center">
 						<a href="/" class="d-block d-lg-none col-6 col-sm-3">
 							<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo.svg" alt="logo" class="mw-100">
 						</a>
 						<div class="d-none d-sm-block col-4 col-xl-3">
-							<div class="ps-4 box" style="
-            background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px
-              20px;
-          ">
-								<a href="#" class="ff-roboto lh-15"><?= GetMessage("ADDRESS") ?>
-								</a>
+							<div class="ps-4 box position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px 20px; ">
+								<a href="#" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
 							</div>
 						</div>
 						<div class="d-none d-lg-block col-3">
-							<div class="box ps-4" style="
-            background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone.svg) no-repeat left top / 19px 19px;
-          ">
-								<a href="tel:+375291663388" class="d-block mb-1">
+							<div class="box ps-4 position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone.svg) no-repeat left top / 19px 19px;">
+								<?
+								$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
+								?>
+								<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $A1); ?>" class="d-block mb-1">
 									<div class="ff-roboto">
-										<span class="link d-inline-block text-nowrap pe-4" style="
-                  background: url(<?= SITE_TEMPLATE_PATH ?>/img/A1.png) no-repeat right center / 15px
-                    15px;
-                ">+375(29)166-33-88</span>
+										<span class="link d-inline-block text-nowrap pe-4" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/A1.png) no-repeat right center / 15px 15px;"><?= $A1; ?>
+										</span>
 									</div>
 								</a>
-								<a href="tel:+375292560307 " class="d-block">
+								<?
+								$MTC = \Victory\Options\CVictoryOptions::getOptionValue('MTC_' . SITE_ID);
+								?>
+								<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $MTC); ?>" class="d-block">
 									<div class="ff-roboto">
-										<span class="link d-inline-block text-nowrap pe-4" style="
-                  background: url(<?= SITE_TEMPLATE_PATH ?>/img/MTC.png) no-repeat right center / 15px
-                    15px;
-                ">+375(29)256-03-07
+										<span class="link d-inline-block text-nowrap pe-4" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/MTC.png) no-repeat right center / 15px 15px;"><?= $MTC; ?>
 										</span>
 									</div>
 								</a>
 							</div>
 						</div>
 						<div class="d-none d-lg-block col-2 col-md-3">
-							<div class="box ps-4" style="
-            background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/time.svg) no-repeat left top / 19px 19px;
-          ">
+							<div class="ps-4" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/time.svg) no-repeat left top / 19px 19px;">
 								<div class="ff-roboto">
-									<span class="d-block"><?= GetMessage("SCHEDULE") ?> </span>
-									<span class="d-block"><?= GetMessage("SUNDAY") ?></span>
+									<span class="d-block">
+										<?= \Victory\Options\CVictoryOptions::getOptionValue('shedule_' . SITE_ID); ?>
+									</span>
 								</div>
 							</div>
 						</div>
@@ -110,14 +105,14 @@ if (CModule::IncludeModule("victory.options")) {}
 							</div>
 							<ul class="d-flex align-items-center justify-content-between p-0 m-0 gap-1">
 								<li>
-									<a href="#" class="">
-										<picture>
-											<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/viber.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/viber.png" alt="" class="">
-										</picture>
+									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>" class="">
+										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/viber.svg" alt="instagram" class="">
 									</a>
 								</li>
 								<li>
-									<a href="#" class=""><img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/instagram.svg" alt="" class=""></a>
+									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>" class="">
+										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/instagram.svg" alt="instagram" class="">
+									</a>
 								</li>
 							</ul>
 						</div>
@@ -127,7 +122,7 @@ if (CModule::IncludeModule("victory.options")) {}
 							</span>
 						</button>
 					</div>
-					<div class="pt-3 row justify-content-between">
+					<div class="py-3 row justify-content-between">
 						<a href="/" class="d-none d-lg-block col-6 col-lg-3 ">
 							<img src="<?= SITE_TEMPLATE_PATH ?>//img/icons/logo.svg" alt="logo" class="mw-100">
 						</a>
@@ -159,7 +154,7 @@ if (CModule::IncludeModule("victory.options")) {}
 						<div class="row mb-4 pt-4">
 							<div class="col-12 col-lg-7">
 								<h1 class="fs-40 lh-15 text-uppercase fw-700 ">
-									<?= \Victory\Options\CVictoryOptions::getOptionValue('main_h1_' . SITE_ID); ?>
+									<?= \Victory\Options\CVictoryOptions::getOptionValue('promo_h1_' . SITE_ID); ?>
 								</h1>
 							</div>
 						</div>
@@ -170,17 +165,17 @@ if (CModule::IncludeModule("victory.options")) {}
 							</picture>
 							<div class="line--frontal position-absolute">
 								<div class="promo__line line position-relative">
-									<div class="lh-15 line__info position-absolute">лобовое</div>
+									<div class="lh-15 line__info position-absolute"><?= GetMessage("FRONTAL") ?></div>
 								</div>
 							</div>
 							<div class="line--side position-absolute">
 								<div class="line position-relative">
-									<div class="lh-15 line__info position-absolute">боковые</div>
+									<div class="lh-15 line__info position-absolute"><?= GetMessage("SIDE") ?></div>
 								</div>
 							</div>
 							<div class="line--back position-absolute">
 								<div class="line position-relative">
-									<div class="lh-15 line__info position-absolute">заднее</div>
+									<div class="lh-15 line__info position-absolute"><?= GetMessage("BACK") ?></div>
 								</div>
 							</div>
 						</div>

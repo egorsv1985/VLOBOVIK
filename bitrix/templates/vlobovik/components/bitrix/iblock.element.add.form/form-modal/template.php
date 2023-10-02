@@ -20,11 +20,8 @@ if ($arResult["MESSAGE"] <> '') : ?>
 	<? ShowNote($arResult["MESSAGE"]) ?>
 <? endif ?>
 <form name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
-	<div class="d-flex flex-column justify-content-center">
-		<div class="fs-22 text-center lh-15"><?= GetMessage("REQUEST") ?></div>
-		<p class="fs-22 text-center lh-12 mb-3">
-			<span class="fw-700"><?= GetMessage("HELP") ?></span> <?= GetMessage("GRATIS") ?>
-		</p>
+	<div class="form-group position-relative mb-3">
+
 		<?= bitrix_sessid_post() ?>
 		<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?>
 			<input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>">
@@ -281,10 +278,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 			<input type="button" name="iblock_cancel" value="<? echo GetMessage('IBLOCK_FORM_CANCEL'); ?>" onclick="location.href='<? echo CUtil::JSEscape($arParams["LIST_URL"]) ?>';">
 		<? endif ?>
 	</div>
-	<button type="submit" name="iblock_submit" value="<?= GetMessage("GET") ?>" class="form__btn btn fs-18 fw-600 p-2 lh-15 btn-primary w-100 border-0 mb-3 text-white">
-		<?= GetMessage("GET") ?>
+	<button type="submit" name="iblock_submit" value="<?= GetMessage("SEND") ?>" class="form__btn btn fs-18 fw-600 p-2 lh-15 btn-primary w-100 border-0 mb-3 text-white">
+		<?= GetMessage("SEND") ?>
 	</button>
-	<p class="fs-10 lh-15 text-center mb-0">
-		<?= GetMessage("FORM") ?>
-	</p>
 </form>
