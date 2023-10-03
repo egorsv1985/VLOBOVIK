@@ -14,14 +14,17 @@ $this->setFrameMode(true);
 ?>
 <section class="portfolio my-5 py-5" id="portfolio">
 	<div class="container position-relative">
-		<h2 class="fs-32 fw-600 lh-15 text-center mb-4"><?= $arResult["NAME"]; ?></h2>
+		<?
+		$arResult["NAME"] = str_replace(array("RU_", "BY_"), "", $arResult["NAME"]);
+		?>
+		<h2 class="fs-32 fw-600 lh-15 text-center my-5"><?= $arResult["NAME"]; ?></h2>
 		<div class="swiper portfolioSwiper mb-3">
 			<div class="swiper-wrapper">
 				<? foreach ($arResult["ITEMS"] as $arItem) :
-				if (CModule::IncludeModule("millcom.phpthumb")) {
-					$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 7);
-					$arItem["PREVIEW_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 8);
-				}
+					if (CModule::IncludeModule("millcom.phpthumb")) {
+						$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 7);
+						$arItem["PREVIEW_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 8);
+					}
 					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'))); ?>
 					<div class="swiper-slide">

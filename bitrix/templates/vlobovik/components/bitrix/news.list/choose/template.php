@@ -15,6 +15,9 @@ $this->setFrameMode(true);
 ?>
 <section class="choose py-5">
 	<div class="container">
+		<?
+		$arResult["NAME"] = str_replace(array("RU_", "BY_"), "", $arResult["NAME"]);
+		?>
 		<h2 class="fs-32 fw-600 lh-15 text-center my-5"><?= $arResult["NAME"]; ?>
 		</h2>
 
@@ -34,13 +37,13 @@ $this->setFrameMode(true);
 				<div class="row g-3 mb-5">
 					<div class="col-12 col-md-6 choose__box-content">
 						<div class="fs-22 fw-600 lh-13 text-secondary">
-						<?= GetMessage("PROBLEMS") ?>
+							<?= GetMessage("PROBLEMS") ?>
 						</div>
 					</div>
 					<div class="col-12 col-md-6 choose__box-content">
 						<div class="choose__box-text rounded-3 p-2 d-flex justify-content-center align-items-center">
 							<span class="fs-24 fw-600 lh-13 text-primary opacity-100">
-							<?= GetMessage("WORK") ?>
+								<?= GetMessage("WORK") ?>
 							</span>
 						</div>
 					</div>

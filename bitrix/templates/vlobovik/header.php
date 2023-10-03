@@ -61,7 +61,7 @@ if (CModule::IncludeModule("victory.options")) {
 						</a>
 						<div class="d-none d-sm-block col-4 col-xl-3">
 							<div class="ps-4 box position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px 20px; ">
-								<a href="#" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
+								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
 							</div>
 						</div>
 						<div class="d-none d-lg-block col-3">
@@ -99,8 +99,8 @@ if (CModule::IncludeModule("victory.options")) {
 							<div class="header__language language w-100 mb-2">
 								<div class="language__current text-end pe-2">рус</div>
 								<ul class="language__options ff-roboto end-0 gap-1 py-1 px-2">
-									<li data-lang="рус">рус</li>
-									<li data-lang="бел">бел</li>
+									<li data-lang="рус"><a href="/">рус</a></li>
+									<li data-lang="бел"><a href="/by/">бел</a></li>
 								</ul>
 							</div>
 							<ul class="d-flex align-items-center justify-content-between p-0 m-0 gap-1">

@@ -15,6 +15,9 @@ $this->setFrameMode(true);
 ?>
 <section class="steps my-5 py-5">
 	<div class="container">
+		<?
+		$arResult["NAME"] = str_replace(array("RU_", "BY_"), "", $arResult["NAME"]);
+		?>
 		<h2 class="fs-32 lh-15 fw-600 text-center mb-5"><?= $arResult["NAME"]; ?></h2>
 		<div class="row gx-5 gy-4 justify-content-between">
 			<? foreach ($arResult["ITEMS"] as $arItem) :
@@ -27,7 +30,7 @@ $this->setFrameMode(true);
 						</div>
 						<div class="steps__box rounded-1 py-4 px-3 position-relative flex-grow-1 d-flex flex-column mh-100">
 							<div class="steps__box-img mb-2">
-								<img src="<?= CFile::GetPath($arItem['PROPERTIES']['ICON']['VALUE']); ?>" alt="<?= $arItem["NAME"]; ?>" title="<?= $arItem["NAME"]; ?>" class="" > 
+								<img src="<?= CFile::GetPath($arItem['PROPERTIES']['ICON']['VALUE']); ?>" alt="<?= $arItem["NAME"]; ?>" title="<?= $arItem["NAME"]; ?>" class="">
 							</div>
 							<div class="fs-18"><?= $arItem["NAME"]; ?></div>
 						</div>

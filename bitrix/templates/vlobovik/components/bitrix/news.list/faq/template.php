@@ -14,6 +14,9 @@ $this->setFrameMode(true);
 ?>
 <section class="faq py-5 my-5 bg-light">
 	<div class="container">
+		<?
+		$arResult["NAME"] = str_replace(array("RU_", "BY_"), "", $arResult["NAME"]);
+		?>
 		<h2 class="fs-32 fw-600 lh-15 text-center mb-5"><?= $arResult["NAME"]; ?></h2>
 		<div class="accordion" id="faqAccordion">
 			<?

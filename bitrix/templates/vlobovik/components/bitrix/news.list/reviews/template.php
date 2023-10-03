@@ -14,6 +14,9 @@ $this->setFrameMode(true);
 ?>
 <section class="reviews my-5 py-5" id="reviews">
 	<div class="container position-relative">
+		<?
+		$arResult["NAME"] = str_replace(array("RU_", "BY_"), "", $arResult["NAME"]);
+		?>
 		<h2 class="fs-32 lh-15 fw-600 text-center mb-5"><?= $arResult["NAME"]; ?></h2>
 		<div class="swiper reviewsSwiper mb-3">
 			<div class="swiper-wrapper">

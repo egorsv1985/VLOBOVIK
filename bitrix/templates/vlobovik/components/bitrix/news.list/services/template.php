@@ -15,6 +15,9 @@ $this->setFrameMode(true);
 ?>
 <section class="services py-5 my-5" id="services">
 	<div class="container">
+		<?
+		$arResult["NAME"] = str_replace(array("RU_", "BY_"), "", $arResult["NAME"]);
+		?>
 		<h2 class="fs-32 fw-600 lh-15 text-center mb-5"><?= $arResult["NAME"]; ?></h2>
 		<div class="row g-0 ">
 			<? foreach ($arResult["ITEMS"] as $arItem) :
