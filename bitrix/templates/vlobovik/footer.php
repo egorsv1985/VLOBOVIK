@@ -9,7 +9,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			<div class="col-12 col-sm-6 col-lg-3">
 				<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo-white.svg" alt="vlobovik" class="mw-100 h-auto mb-4">
 				<div class="lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('requisites_name_' . SITE_ID); ?></div>
-				<a href="#" class="d-block"><span class="lh-15">Политика конфиденциальности</span></a>
+				<a href="#" class="d-block"><span class="lh-15"><?= GetMessage("POLITICA") ?></span></a>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<div class="footer__box lh-15 ff-roboto mb-4 ps-4" style="

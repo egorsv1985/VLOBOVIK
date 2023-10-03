@@ -499,3 +499,5 @@ $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/partners.php");
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 ?>
+
+

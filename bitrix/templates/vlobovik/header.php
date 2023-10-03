@@ -97,11 +97,15 @@ if (CModule::IncludeModule("victory.options")) {
 						</div>
 						<div class="col-2 col-md-1">
 							<div class="header__language language w-100 mb-2">
-								<div class="language__current text-end pe-2">рус</div>
+								<?
+								// Определяем, какой язык выводить в зависимости от текущего пути
+								$currentLanguage = ($_SERVER['REQUEST_URI'] === '/by/') ? 'бел' : 'рус';
+								?>
+								<div class="language__current text-end pe-2"><?= $currentLanguage ?></div>
 								<ul class="language__options ff-roboto end-0 gap-1 py-1 px-2">
 									<li data-lang="рус"><a href="/">рус</a></li>
 									<li data-lang="бел"><a href="/by/">бел</a></li>
-								</ul>
+								</ul>							
 							</div>
 							<ul class="d-flex align-items-center justify-content-between p-0 m-0 gap-1">
 								<li>
