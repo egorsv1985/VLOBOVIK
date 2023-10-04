@@ -96,7 +96,7 @@ if (CModule::IncludeModule("victory.options")) {
 							</div>
 						</div>
 						<div class="col-2 col-md-1">
-							<div class="header__language language w-100 mb-2">
+							<div class="header__language language w-100 mb-2 position-relative">
 								<?
 								// Определяем, какой язык выводить в зависимости от текущего пути
 								$currentLanguage = ($_SERVER['REQUEST_URI'] === '/by/') ? 'бел' : 'рус';
@@ -109,12 +109,12 @@ if (CModule::IncludeModule("victory.options")) {
 							</div>
 							<ul class="d-flex align-items-center justify-content-between p-0 m-0 gap-1">
 								<li>
-									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>" class="">
-										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/viber.svg" alt="instagram" class="">
+									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>" target="_blank">
+										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/viber.svg" alt="viber" class="">
 									</a>
 								</li>
 								<li>
-									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>" class="">
+									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>" target="_blank">
 										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/instagram.svg" alt="instagram" class="">
 									</a>
 								</li>

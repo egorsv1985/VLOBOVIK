@@ -54,11 +54,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				<div class="text-uppercase ff-roboto mb-3"><?= GetMessage("SOCIAL") ?></div>
 				<ul class="footer__social d-flex flex-column align-items-center align-items-sm-start gap-2 ff-roboto p-0 m-0">
 					<li>
-						<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>">Instagram</a>
+						<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>" target="_blank">Instagram</a>
 					</li>
 
 					<li>
-						<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>">Viber</a>
+						<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>" target="_blank">Viber</a>
 					</li>
 				</ul>
 			</div>
@@ -127,4 +127,5 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	</div>
 </div>
 </body>
+
 </html>
