@@ -480,20 +480,28 @@ $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/sales.php");
 $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/partners.php");
 ?>
 <section class="map pt-5 mt-5" id="map">
-	<? $APPLICATION->IncludeComponent(
-		"bitrix:map.yandex.view",
-		"",
-		array(
-			"API_KEY" => "",
-			"CONTROLS" => array("ZOOM", "MINIMAP", "TYPECONTROL", "SCALELINE"),
-			"INIT_MAP_TYPE" => "MAP",
-			"MAP_DATA" => "a:3:{s:10:\"yandex_lat\";d:53.935188;s:10:\"yandex_lon\";d:27.428162;s:12:\"yandex_scale\";i:17;}",
-			"MAP_HEIGHT" => "410px",
-			"MAP_ID" => "",
-			"MAP_WIDTH" => "100%",
-			"OPTIONS" => array("ENABLE_SCROLL_ZOOM", "ENABLE_DBLCLICK_ZOOM", "ENABLE_DRAGGING")
-		)
-	); ?>
+	<? $APPLICATION->IncludeComponent("bitrix:map.yandex.view", ".default", Array(
+	"API_KEY" => "",	// Ключ API
+		"CONTROLS" => array(	// Элементы управления
+			0 => "ZOOM",
+			1 => "MINIMAP",
+			2 => "TYPECONTROL",
+			3 => "SCALELINE",
+		),
+		"INIT_MAP_TYPE" => "MAP",	// Стартовый тип карты
+		"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:53.9351879999964;s:10:\"yandex_lon\";d:27.428161999999958;s:12:\"yandex_scale\";i:17;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:27.428161999999958;s:3:\"LAT\";d:53.9351879999964;s:4:\"TEXT\";s:0:\"\";}}}",	// Данные, выводимые на карте
+		"MAP_HEIGHT" => "410px",	// Высота карты
+		"MAP_ID" => "",	// Идентификатор карты
+		"MAP_WIDTH" => "100%",	// Ширина карты
+		"OPTIONS" => array(	// Настройки
+			0 => "ENABLE_SCROLL_ZOOM",
+			1 => "ENABLE_DBLCLICK_ZOOM",
+			2 => "ENABLE_DRAGGING",
+		),
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+); ?>
 </section>
 
 <?

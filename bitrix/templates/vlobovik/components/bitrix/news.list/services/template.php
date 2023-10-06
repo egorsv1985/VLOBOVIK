@@ -29,7 +29,17 @@ $this->setFrameMode(true);
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
 				<div class="col-12 col-sm-6 col-lg-3">
-					<a href="#" class="services__link position-relative w-100 d-block h-100">
+					<? if ($arItem["PROPERTIES"]["LINK"]["VALUE"] == "") : ?>
+						<? if ($arItem["DETAIL_TEXT"]) : ?>
+							<a href="#modal<?= $arItem['ID'] ?>" class="services__link position-relative w-100 d-block h-100">
+								<div class="modal"><?= $arItem['DETAIL_TEXT'] ?></div>
+							</a>
+						<? else : ?>
+							<span class="services__link position-relative w-100 d-block h-100">
+						<? endif; ?>
+					<? else : ?>
+						<a href="#" class="services__link position-relative w-100 d-block h-100">
+						<? endif; ?>
 						<div class="services__box-img w-100 h-100 position-relative">
 							<picture>
 								<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"]; ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"]; ?>" alt="<?= $arItem["NAME"]; ?>" title="<?= $arItem["NAME"]; ?>" class="w-100 h-100" width="290" height="290">
@@ -38,7 +48,7 @@ $this->setFrameMode(true);
 						<div class="fs-20 fw-700 text-white lh-15 position-absolute services__text pe-5">
 							<?= $arItem["NAME"]; ?>
 						</div>
-					</a>
+						</a>
 				</div>
 			<? endforeach; ?>
 		</div>

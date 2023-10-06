@@ -56,15 +56,15 @@ if (CModule::IncludeModule("victory.options")) {
 			<header class="header w-100 position-fixed">
 				<div class="container">
 					<div class="header__top row py-3 justify-content-between align-items-center">
-						<a href="/" class="d-block d-lg-none col-6 col-sm-3">
+						<a href="/" class="d-block d-lg-none col-4 col-sm-3">
 							<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo.svg" alt="logo" class="mw-100">
 						</a>
-						<div class="d-none d-sm-block col-4 col-xl-3">
+						<div class="d-none d-lg-block col-4 col-xl-3">
 							<div class="ps-4 box position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px 20px; ">
 								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
 							</div>
 						</div>
-						<div class="d-none d-lg-block col-3">
+						<div class="d-block col-4">
 							<div class="box ps-4 position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone.svg) no-repeat left top / 19px 19px;">
 								<?
 								$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
@@ -96,7 +96,7 @@ if (CModule::IncludeModule("victory.options")) {
 							</div>
 						</div>
 						<div class="col-2 col-md-1">
-							<div class="header__language language w-100 mb-2">
+							<div class="header__language language w-100 mb-2 position-relative">
 								<?
 								// Определяем, какой язык выводить в зависимости от текущего пути
 								$currentLanguage = ($_SERVER['REQUEST_URI'] === '/by/') ? 'бел' : 'рус';
@@ -109,12 +109,12 @@ if (CModule::IncludeModule("victory.options")) {
 							</div>
 							<ul class="d-flex align-items-center justify-content-between p-0 m-0 gap-1">
 								<li>
-									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>" class="">
-										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/viber.svg" alt="instagram" class="">
+									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('viber_link_' . SITE_ID); ?>" target="_blank">
+										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/viber.svg" alt="viber" class="">
 									</a>
 								</li>
 								<li>
-									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>" class="">
+									<a href="<?= \Victory\Options\CVictoryOptions::getOptionValue('ig_link_' . SITE_ID); ?>" target="_blank">
 										<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/instagram.svg" alt="instagram" class="">
 									</a>
 								</li>
@@ -185,7 +185,7 @@ if (CModule::IncludeModule("victory.options")) {
 						</div>
 						<div class="row">
 							<div class="col-12 col-md-8 col-lg-5 col-xl-4">
-								<div class="promo__box-form rounded-3 py-4 px-5">
+								<div class="promo__box-form rounded-3 py-4 px-5" id="promo-form">
 									<? $APPLICATION->IncludeComponent(
 										"bitrix:iblock.element.add.form",
 										"promo-form",

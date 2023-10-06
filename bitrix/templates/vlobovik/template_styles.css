@@ -209,6 +209,9 @@ h6 {
 .fs-10 {
   font-size: 10px;
 }
+.fs-14 {
+  font-size: 14px;
+}
 .fs-16 {
   font-size: 16px;
 }
@@ -244,6 +247,12 @@ h6 {
 
 .lh-15 {
   line-height: 150%;
+}
+.lh-10 {
+  line-height: 1;
+}
+.fw-400 {
+  font-weight: 400;
 }
 .fw-500 {
   font-weight: 500;
@@ -342,7 +351,9 @@ body.popup-show::after {
 .lock .popup__content {
   visibility: visible;
 }
-
+/* .header__language{
+  z-index: -1;
+} */
 .burger {
   height: 30px;
   width: 30px;
@@ -496,15 +507,17 @@ body.popup-show::after {
   background: url(img/icons/arrow.svg) no-repeat 100%/6px 6px;
 }
 .language__options {
+  display: none;
   opacity: 0;
   position: absolute;
   list-style: none;
   padding: 0;
   margin: 0;
   border: 1px solid #fff;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 .language__options.open {
+  display: flex;
   opacity: 1;
   flex-direction: column;
   background-color: #fff;
@@ -530,7 +543,8 @@ body.popup-show::after {
   background-color: rgba(43, 87, 154, 0.21);
 }
 .promo__box-text {
-  background-color: rgba(43, 87, 154, 0.46);
+  background-color: rgb(43, 87, 154);
+  /* background-color: rgba(43, 87, 154, 0.46); */
   position: relative;
 }
 .promo__box-form {
@@ -599,6 +613,8 @@ body.popup-show::after {
 .choose__box-content:nth-child(odd) {
   opacity: 0.6;
 }
+
+
 .choose__box-text {
   background-color: rgba(43, 87, 154, 0.3);
 }
@@ -712,6 +728,7 @@ body.popup-show::after {
 }
 .steps__counter {
   color: rgba(43, 87, 154, 0.19);
+  margin-bottom: -20px;
 }
 .steps__box {
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
@@ -882,7 +899,24 @@ body.popup-show::after {
   .promo__box-text {
     position: absolute;
     right: -80%;
+    bottom: -.5rem;
   }
+}
+@media only screen and (max-width: 991px) {
+  .header ul li a:hover{
+    color: #000;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .choose__box-content:nth-child(even) .choose__text {
+    font-size: 17px;
+  }
+  .choose__box-content:nth-child(even) {
+    color: #2B579A;
+    
+    
+  }
+ 
 }
 @media only screen and (min-width: 767px) {
   .choose__content:after,
@@ -892,6 +926,7 @@ body.popup-show::after {
   .choose__content:before {
     transform: translate(-50%, -50%);
   }
+ 
   /* .install__grid {
     grid-template-areas: "a a b" "c c c";
   } */
@@ -933,6 +968,7 @@ body.popup-show::after {
   }
 }
 @media only screen and (min-width: 991px) {
+  
   .swiper__control {
     position: absolute;
     top: 50%;
@@ -1030,4 +1066,6 @@ body.popup-show::after {
     width: max-content;
     margin: 0 auto;
   }
+  
 }
+
