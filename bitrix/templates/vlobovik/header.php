@@ -59,12 +59,12 @@ if (CModule::IncludeModule("victory.options")) {
 						<a href="/" class="d-block d-lg-none col-6 col-sm-3">
 							<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo.svg" alt="logo" class="mw-100">
 						</a>
-						<div class="d-none d-sm-block col-4 col-xl-3">
+						<div class="d-none d-lg-block col-lg-4 col-xl-3">
 							<div class="ps-4 box position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px 20px; ">
 								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
 							</div>
 						</div>
-						<div class="d-none d-lg-block col-3">
+						<div class="d-none d-sm-block col-4">
 							<div class="box ps-4 position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone.svg) no-repeat left top / 19px 19px;">
 								<?
 								$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
@@ -127,6 +127,28 @@ if (CModule::IncludeModule("victory.options")) {
 						</button>
 					</div>
 					<div class="py-3 row justify-content-between">
+					<div class="d-block d-sm-none col-12">
+							<div class="d-flex gap-2 flex-wrap  box ps-4 position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone.svg) no-repeat left top / 19px 19px;">
+								<?
+								$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
+								?>
+								<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $A1); ?>" class="d-flex mb-1">
+									<div class="ff-roboto">
+										<span class="link d-inline-block text-nowrap pe-4" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/A1.png) no-repeat right center / 15px 15px;"><?= $A1; ?>
+										</span>
+									</div>
+								</a>
+								<?
+								$MTC = \Victory\Options\CVictoryOptions::getOptionValue('MTC_' . SITE_ID);
+								?>
+								<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $MTC); ?>" class="d-flex">
+									<div class="ff-roboto">
+										<span class="link d-inline-block text-nowrap pe-4" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/MTC.png) no-repeat right center / 15px 15px;"><?= $MTC; ?>
+										</span>
+									</div>
+								</a>
+							</div>
+						</div>
 						<a href="/" class="d-none d-lg-block col-6 col-lg-3 ">
 							<img src="<?= SITE_TEMPLATE_PATH ?>//img/icons/logo.svg" alt="logo" class="mw-100">
 						</a>
