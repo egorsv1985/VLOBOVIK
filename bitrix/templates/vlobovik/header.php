@@ -56,15 +56,15 @@ if (CModule::IncludeModule("victory.options")) {
 			<header class="header w-100 position-fixed">
 				<div class="container">
 					<div class="header__top row py-3 justify-content-between align-items-center">
-						<a href="/" class="d-block d-lg-none col-4 col-sm-3">
+						<a href="/" class="d-block d-lg-none col-6 col-sm-3">
 							<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo.svg" alt="logo" class="mw-100">
 						</a>
-						<div class="d-none d-lg-block col-4 col-xl-3">
+						<div class="d-none d-sm-block col-4 col-xl-3">
 							<div class="ps-4 box position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px 20px; ">
 								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
 							</div>
 						</div>
-						<div class="d-block col-4">
+						<div class="d-none d-lg-block col-3">
 							<div class="box ps-4 position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/phone.svg) no-repeat left top / 19px 19px;">
 								<?
 								$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
@@ -105,7 +105,7 @@ if (CModule::IncludeModule("victory.options")) {
 								<ul class="language__options ff-roboto end-0 gap-1 py-1 px-2">
 									<li data-lang="рус"><a href="/">рус</a></li>
 									<li data-lang="бел"><a href="/by/">бел</a></li>
-								</ul>							
+								</ul>
 							</div>
 							<ul class="d-flex align-items-center justify-content-between p-0 m-0 gap-1">
 								<li>
