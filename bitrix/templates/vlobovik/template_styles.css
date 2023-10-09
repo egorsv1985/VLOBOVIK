@@ -806,6 +806,13 @@ body.popup-show::after {
   outline: 0;
   box-shadow: none;
 }
+.map__form{
+  top: 25%;
+  right: 5%;
+  width: 50%;
+  max-width: 600px;
+
+}
 .header {
   z-index: 999;
   background-color: #fff;

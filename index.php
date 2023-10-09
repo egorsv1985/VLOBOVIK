@@ -125,8 +125,8 @@ $APPLICATION->SetTitle("Главная");
 	)
 ); ?>
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"services",
+	"bitrix:news.list", 
+	"services", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -140,7 +140,7 @@ $APPLICATION->SetTitle("Главная");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "services",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -148,7 +148,10 @@ $APPLICATION->SetTitle("Главная");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(0 => "", 1 => "",),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "3",
@@ -167,7 +170,10 @@ $APPLICATION->SetTitle("Главная");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(0 => "", 1 => "",),
+		"PROPERTY_CODE" => array(
+			0 => "LINK",
+			1 => "",
+		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
@@ -180,7 +186,8 @@ $APPLICATION->SetTitle("Главная");
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N"
-	)
+	),
+	false
 ); ?>
 <?
 $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/install.php");
@@ -479,7 +486,7 @@ $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/sales.php");
 <?
 $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/partners.php");
 ?>
-<section class="map pt-5 mt-5" id="map">
+<section class="map pt-5 mt-5 position-relative" id="map">
 	<? $APPLICATION->IncludeComponent("bitrix:map.yandex.view", ".default", Array(
 	"API_KEY" => "",	// Ключ API
 		"CONTROLS" => array(	// Элементы управления
@@ -502,6 +509,54 @@ $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/partners.php");
 	),
 	false
 ); ?>
+<div class="map__form bg-primary position-absolute">
+		<? $APPLICATION->IncludeComponent(
+			"bitrix:iblock.element.add.form",
+			"map-form",
+			array(
+				"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+				"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+				"CUSTOM_TITLE_DETAIL_PICTURE" => "",
+				"CUSTOM_TITLE_DETAIL_TEXT" => "",
+				"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+				"CUSTOM_TITLE_NAME" => "Введите имя",
+				"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+				"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+				"CUSTOM_TITLE_TAGS" => "",
+				"DEFAULT_INPUT_SIZE" => "30",
+				"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+				"ELEMENT_ASSOC" => "CREATED_BY",
+				"GROUPS" => array(
+					0 => "2",
+				),
+				"IBLOCK_ID" => "1",
+				"IBLOCK_TYPE" => "SYSTEM",
+				"LEVEL_LAST" => "Y",
+				"LIST_URL" => "",
+				"MAX_FILE_SIZE" => "0",
+				"MAX_LEVELS" => "100000",
+				"MAX_USER_ENTRIES" => "100000",
+				"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+				"PROPERTY_CODES" => array(
+					0 => "1",
+					1 => "NAME",
+				),
+				"PROPERTY_CODES_REQUIRED" => array(
+					0 => "1",
+					1 => "NAME",
+				),
+				"RESIZE_IMAGES" => "N",
+				"SEF_MODE" => "N",
+				"STATUS" => "ANY",
+				"STATUS_NEW" => "N",
+				"USER_MESSAGE_ADD" => "Спасибо, Ваша заявка успешно сохранена",
+				"USER_MESSAGE_EDIT" => "Спасибо, Ваша заявка успешно сохранена!",
+				"USE_CAPTCHA" => "N",
+				"COMPONENT_TEMPLATE" => "promo-form"
+			),
+			false
+		); ?>
+	</div>
 </section>
 
 <?
