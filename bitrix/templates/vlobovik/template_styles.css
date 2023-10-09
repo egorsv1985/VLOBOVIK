@@ -807,9 +807,9 @@ body.popup-show::after {
   box-shadow: none;
 }
 .map__form{
-  top: 25%;
-  right: 5%;
-  width: 50%;
+  top: 12%;
+  right:5%;
+  width: 75%;
   max-width: 600px;
 
 }
@@ -897,6 +897,13 @@ body.popup-show::after {
     right: -80%;
     bottom: -0.5rem;
   }
+  .map__form{
+    top: 12%;
+    right: 2%;
+    width: 40%;
+    max-width: 500px;
+  
+  }
 }
 @media only screen and (max-width: 991px) {
   .header ul li a:hover {
@@ -910,6 +917,7 @@ body.popup-show::after {
   .choose__box-content:nth-child(even) {
     color: #2b579a;
   }
+
 }
 @media only screen and (min-width: 767px) {
   .choose__content:after,
@@ -929,6 +937,7 @@ body.popup-show::after {
     bottom: 0;
     right: 0;
   }
+  
 
   /* .install__grid {
     grid-template-areas: "a a b" "c c c";
