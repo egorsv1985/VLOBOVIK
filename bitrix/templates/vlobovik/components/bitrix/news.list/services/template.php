@@ -32,12 +32,12 @@ $this->setFrameMode(true);
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
 				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="services__link position-relative w-100 d-block h-100">
+					<div class="w-100 d-block h-100">
 						<? if ($arItem["PROPERTIES"]["LINK"]["VALUE"] == "") : // Проверяем, пустое ли свойство LINK 
 						?>
 							<? if ($arItem["DETAIL_TEXT"]) : // Если DETAIL_TEXT заполнено, то выводим модальное окно 
 							?>
-								<a href="#modal" type="button" class="position-relative w-100 d-block h-100" data-bs-toggle="modal" data-bs-target="#modal">
+								<a href="#modal" type="button" class="w-100 d-block h-100" data-bs-toggle="modal" data-bs-target="#modal">
 									<!-- Modal -->
 									<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered" role="document">
@@ -58,8 +58,9 @@ $this->setFrameMode(true);
 								<? endif; ?>
 							<? else : // Если свойство LINK не пусто 
 							?>
-								<a href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"] ?>" class="position-relative w-100 d-block h-100">
+								<a href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"] ?>" class="  w-100 d-block h-100">
 								<? endif; ?>
+								<div class="services__link position-relative">
 								<div class="services__box-img w-100 h-100 position-relative">
 									<picture>
 										<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"]; ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"]; ?>" alt="<?= $arItem["NAME"]; ?>" title="<?= $arItem["NAME"]; ?>" class="w-100 h-100" width="290" height="290">
@@ -68,7 +69,7 @@ $this->setFrameMode(true);
 								<div class="fs-20 fw-700 text-white lh-15 position-absolute services__text pe-5">
 									<?= $arItem["NAME"]; ?>
 								</div>
-
+								</div>
 								</a>
 					</div>
 				</div>

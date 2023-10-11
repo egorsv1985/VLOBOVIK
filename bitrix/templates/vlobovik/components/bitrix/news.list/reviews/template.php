@@ -27,7 +27,7 @@ $this->setFrameMode(true);
 						<div class="swiper__top p-3 rounded-3 d-flex flex-column flex-grow-1">
 							<div class="d-flex gap-4 mb-4">
 								<div class="swiper__box-img d-block">
-									<img src="img/icons/quotes.svg" alt="" class="d-block">
+									<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/quotes.svg" alt="" class="d-block">
 								</div>
 								<div class="swiper__info d-flex flex-column">
 									<div class="fs-20 fw-600"><?= $arItem["NAME"]; ?></div>

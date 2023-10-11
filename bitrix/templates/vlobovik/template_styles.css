@@ -266,7 +266,7 @@ h6 {
 .ff-roboto {
   font-family: Roboto;
 }
-body:after {
+/* body:after {
   content: "";
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -278,7 +278,7 @@ body:after {
   transition: opacity 0.8s ease 0s;
   pointer-events: none;
   z-index: 9997;
-}
+} */
 body.popup-show::after {
   opacity: 1;
 }
@@ -424,6 +424,11 @@ body.popup-show::after {
 .swiper-button-prev {
   left: 0;
 }
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 0.7;
+}
+
 .swiper__control {
   width: 40%;
   max-width: 150px;
@@ -477,7 +482,9 @@ body.popup-show::after {
   height: 28px;
   background: url(img/icons/circle.svg) no-repeat 50% / cover;
   top: -30%;
+  animation: scaleX 2s infinite;
 }
+
 .line__info {
   top: -60%;
   transform: translateX(-50%);
@@ -510,6 +517,7 @@ body.popup-show::after {
   display: none;
   opacity: 0;
   position: absolute;
+  z-index: 1;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -602,7 +610,9 @@ body.popup-show::after {
   height: 28px;
   transform: translateY(-50%);
   right: -13px;
+  animation: scaleXY 2s infinite;
 }
+
 .choose__content:after {
   width: 2px;
   background-color: #2b579a;
@@ -754,6 +764,9 @@ body.popup-show::after {
   transform: translateY(-86%);
   transition: all 0.3s ease-in-out;
 }
+.card-header:hover .faq__box-circle {
+  opacity: 0.7;
+}
 .faq .card__btn[aria-expanded="true"] .faq__box-circle {
   background: url(img/icons/minus.svg) no-repeat 50%/21px 3px;
   /* top: 13%; */
@@ -806,17 +819,43 @@ body.popup-show::after {
   outline: 0;
   box-shadow: none;
 }
-.map__form{
+.map__form {
   top: 12%;
-  right:5%;
+  right: 5%;
   width: 75%;
   max-width: 600px;
-
 }
+
 .header {
   z-index: 999;
   background-color: #fff;
   top: 0;
+}
+.header a {
+  opacity: 1;
+  position: relative;
+
+  transition: opacity 0.3s ease;
+}
+
+.header nav ul li a::before {
+  position: absolute;
+  content: "";
+  display: block;
+  z-index: -1;
+  background: #2b579a;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: calc(5px / -2);
+  transition: 0.3s cubic-bezier(0.03, 0.3, 0.4, 0.96);
+  transform: skew(-10deg);
+}
+.header a:hover {
+  opacity: 0.7;
+}
+.header nav ul li a:hover::before {
+  width: calc(100% + 5px);
 }
 .header__top {
   border-bottom: 1px solid #e4e4e4;
@@ -879,6 +918,7 @@ body.popup-show::after {
 .link--a1:before {
   background: url(img/A1.png) no-repeat 50% / cover;
 }
+
 @media only screen and (min-width: 575px) {
   .popup__content:after {
     height: 70%;
@@ -897,12 +937,11 @@ body.popup-show::after {
     right: -80%;
     bottom: -0.5rem;
   }
-  .map__form{
+  .map__form {
     top: 12%;
     right: 2%;
     width: 40%;
     max-width: 500px;
-  
   }
 }
 @media only screen and (max-width: 991px) {
@@ -917,7 +956,6 @@ body.popup-show::after {
   .choose__box-content:nth-child(even) {
     color: #2b579a;
   }
-
 }
 @media only screen and (min-width: 767px) {
   .choose__content:after,
@@ -937,7 +975,6 @@ body.popup-show::after {
     bottom: 0;
     right: 0;
   }
-  
 
   /* .install__grid {
     grid-template-areas: "a a b" "c c c";
@@ -962,7 +999,9 @@ body.popup-show::after {
     border-radius: 50%;
     right: calc(var(--bs-gutter-x) * -1.2);
     background: url(img/icons/circle.svg) no-repeat 50% / cover;
+    animation: scaleY 2s infinite;
   }
+
   .install__box-text {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
@@ -1076,5 +1115,41 @@ body.popup-show::after {
     width: -moz-max-content;
     width: max-content;
     margin: 0 auto;
+  }
+}
+/* @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  } */
+
+@keyframes scaleX {
+  0%,
+  100% {
+    transform: scale(1) translateX(-50%);
+  }
+  50% {
+    transform: scale(1.2) translateX(-44%);
+  }
+}
+@keyframes scaleXY {
+  0%,
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+  50% {
+    transform: scale(1.2) translate(-44%, -44%);
+  }
+}
+@keyframes scaleY {
+  0%,
+  100% {
+    transform: scale(1) translateY(-50%);
+  }
+  50% {
+    transform: scale(1.2) translateY(-44%);
   }
 }
