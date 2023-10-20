@@ -16,7 +16,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address-white.svg) no-repeat left top /
               14px 20px;
           ">
-					<span class=""><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></span>
+					<span class=""><?= \Victory\Options\CVictoryOptions::getOptionValue('address-footer_' . SITE_ID); ?></span>
 				</div>
 				<div class="ff-roboto footer__box box box--time ps-4" style="
             background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/time-white.svg) no-repeat left top / 19px
@@ -126,6 +126,24 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		</div>
 	</div>
 </div>
+<script>
+function smoothScroll(target) {
+  const headerHeight = document.querySelector('.header').offsetHeight;
+  const elementPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          smoothScroll(target);
+        }
+      });
+    });</script>
 </body>
 
 </html>

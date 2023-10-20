@@ -61,7 +61,7 @@ if (CModule::IncludeModule("victory.options")) {
 						</a>
 						<div class="d-none d-lg-block col-lg-4 col-xl-3">
 							<div class="ps-4 box position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px 20px; ">
-								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
+								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address-header_' . SITE_ID); ?></a>
 							</div>
 						</div>
 						<div class="d-none d-sm-block col-4">
