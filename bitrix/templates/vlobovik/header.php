@@ -53,7 +53,7 @@ if (CModule::IncludeModule("victory.options")) {
 	<body>
 
 		<div class="wrapper">
-			<header class="header w-100 position-fixed">
+			<header class="header w-100 position-fixed" id="header">
 				<div class="container">
 					<div class="header__top row py-3 justify-content-between align-items-center">
 						<a href="/" class="d-block d-lg-none col-6 col-sm-3">
