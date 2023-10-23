@@ -21,7 +21,7 @@ if (!window.BX_YMapAddPlacemark) {
     var obPlacemark = new ymaps.Placemark(
       [arPlacemark.LAT, arPlacemark.LON],
       props,
-      { balloonCloseButton: true, preset: "islands#blueAutoIcon" }
+      { balloonCloseButton: true, preset: "islands#carIcon" }
     );
 
     map.geoObjects.add(obPlacemark);

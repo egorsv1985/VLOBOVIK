@@ -53,7 +53,7 @@ if (CModule::IncludeModule("victory.options")) {
 	<body>
 
 		<div class="wrapper">
-			<header class="header w-100 position-fixed">
+			<header class="header w-100 fixed-top" id="header">
 				<div class="container">
 					<div class="header__top row py-3 justify-content-between align-items-center">
 						<a href="/" class="d-block d-lg-none col-6 col-sm-3">
@@ -61,7 +61,7 @@ if (CModule::IncludeModule("victory.options")) {
 						</a>
 						<div class="d-none d-lg-block col-lg-4 col-xl-3">
 							<div class="ps-4 box position-relative" style="background: url(<?= SITE_TEMPLATE_PATH ?>/img/icons/address.svg) no-repeat left top / 14px 20px; ">
-								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address_' . SITE_ID); ?></a>
+								<a href="#map" class="ff-roboto lh-15"><?= \Victory\Options\CVictoryOptions::getOptionValue('address-header_' . SITE_ID); ?></a>
 							</div>
 						</div>
 						<div class="d-none d-sm-block col-4">

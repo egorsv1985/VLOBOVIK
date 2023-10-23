@@ -37,9 +37,9 @@ $this->setFrameMode(true);
 						?>
 							<? if ($arItem["DETAIL_TEXT"]) : // Если DETAIL_TEXT заполнено, то выводим модальное окно 
 							?>
-								<a href="#modal" type="button" class="w-100 d-block h-100" data-bs-toggle="modal" data-bs-target="#modal">
+								<a href="#modal-<?= $arItem['ID'] ?>" type="button" class="w-100 d-block h-100" data-bs-toggle="modal" data-bs-target="#modal-<?= $arItem['ID'] ?>">
 									<!-- Modal -->
-									<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+									<div class="modal fade" id="modal-<?= $arItem['ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered" role="document">
 											<div class="modal-content">
 												<div class="modal-header">
@@ -61,14 +61,14 @@ $this->setFrameMode(true);
 								<a href="<?= $arItem["PROPERTIES"]["LINK"]["VALUE"] ?>" class="  w-100 d-block h-100">
 								<? endif; ?>
 								<div class="services__link position-relative">
-								<div class="services__box-img w-100 h-100 position-relative">
-									<picture>
-										<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"]; ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"]; ?>" alt="<?= $arItem["NAME"]; ?>" title="<?= $arItem["NAME"]; ?>" class="w-100 h-100" width="290" height="290">
-									</picture>
-								</div>
-								<div class="fs-20 fw-700 text-white lh-15 position-absolute services__text pe-5">
-									<?= $arItem["NAME"]; ?>
-								</div>
+									<div class="services__box-img w-100 h-100 position-relative">
+										<picture>
+											<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"]; ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"]; ?>" alt="<?= $arItem["NAME"]; ?>" title="<?= $arItem["NAME"]; ?>" class="w-100 h-100" width="290" height="290">
+										</picture>
+									</div>
+									<div class="fs-20 fw-700 text-white lh-15 position-absolute services__text pe-5">
+										<?= $arItem["NAME"]; ?>
+									</div>
 								</div>
 								</a>
 					</div>
