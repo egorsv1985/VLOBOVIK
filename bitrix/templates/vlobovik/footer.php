@@ -65,6 +65,16 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		</div>
 	</div>
 </footer>
+<div class="scroll-up">
+	<svg class="scroll-up__svg" viewBox="-2 -2 52 52">
+		<path class="scroll-up__svg-path">
+			d="M24, 0
+			a24,24 0 0,1 0,48
+			a24,24 0 0,1 0,-48
+			"
+		</path>
+	</svg>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
@@ -127,23 +137,27 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	</div>
 </div>
 <script>
-function smoothScroll(target) {
-  const headerHeight = document.querySelector('.header').offsetHeight;
-  const elementPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+	function smoothScroll(target) {
+		const headerHeight = document.querySelector('.header').offsetHeight;
+		const elementPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+		target.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		});
+	}
 
 
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          smoothScroll(target);
-        }
-      });
-    });</script>
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function(e) {
+			e.preventDefault();
+			const target = document.querySelector(this.getAttribute('href'));
+			if (target) {
+				smoothScroll(target);
+			}
+		});
+	});
+</script>
 </body>
 
 </html>

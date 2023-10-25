@@ -3,9 +3,9 @@
 		<div class="install__content rounded-4 p-sm-5">
 			<div class="install__grid">
 				<div class="install__box-image">
-					<div class="install__box-img h-100 position-relative">
+					<div class="install__box-img  position-relative">
 						<picture>
-							<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/installation-foto.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/installation-foto.png" alt="Уникальная для Беларуси услуга" title="Уникальная для Беларуси услуга" class="w-100 position-relative h-100" width="325" height="444">
+							<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/installation-foto.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/installation-foto.png" alt="Уникальная для Беларуси услуга" title="Уникальная для Беларуси услуга" class="w-100 position-relative h-100" width="325">
 						</picture>
 					</div>
 				</div>
