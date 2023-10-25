@@ -1,4 +1,4 @@
-<section class="install my-5">
+<section class="install my-5" id="install">
 	<div class="container">
 		<div class="install__content rounded-4 p-sm-5">
 			<div class="install__grid">

@@ -39,8 +39,14 @@ $config = [
                     'cols' => 40,
                     'rows' => 5
                 ],
-                'address' => [
-                    'label' => 'Адрес',
+                'address-header' => [
+                    'label' => 'Адрес в шапке',
+                    'type' => 'text',
+                    'value' => '',
+                    'size' => 60
+                ],
+                'address-footer' => [
+                    'label' => 'Адрес в подвале',
                     'type' => 'text',
                     'value' => '',
                     'size' => 60
