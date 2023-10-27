@@ -89,6 +89,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					"bitrix:iblock.element.add.form",
 					"form-modal",
 					array(
+						"AJAX_MODE" => 'Y',
 						"COMPONENT_TEMPLATE" => "form-modal",
 						"STATUS_NEW" => "N",
 						"LIST_URL" => "",
@@ -98,13 +99,13 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						"DEFAULT_INPUT_SIZE" => "30",
 						"RESIZE_IMAGES" => "N",
 						"IBLOCK_TYPE" => "SYSTEM",
-						"IBLOCK_ID" => "10",
+						"IBLOCK_ID" => "1",
 						"PROPERTY_CODES" => array(
-							0 => "9",
+							0 => "1",
 							1 => "NAME",
 						),
 						"PROPERTY_CODES_REQUIRED" => array(
-							0 => "9",
+							0 => "1",
 							1 => "NAME",
 						),
 						"GROUPS" => array(
@@ -136,28 +137,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		</div>
 	</div>
 </div>
-<script>
-	function smoothScroll(target) {
-		const headerHeight = document.querySelector('.header').offsetHeight;
-		const elementPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-		target.scrollIntoView({
-			behavior: 'smooth',
-			block: 'start'
-		});
-	}
 
-
-
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function(e) {
-			e.preventDefault();
-			const target = document.querySelector(this.getAttribute('href'));
-			if (target) {
-				smoothScroll(target);
-			}
-		});
-	});
-</script>
 </body>
 
 </html>

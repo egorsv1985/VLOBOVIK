@@ -1,5 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
+$APPLICATION->SetPageProperty("title", "Замена аўташклоў");
 $APPLICATION->SetTitle("Главная");
 ?>
 <? $APPLICATION->IncludeComponent(
@@ -479,20 +480,71 @@ $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/sales.php");
 <?
 $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/partners.php");
 ?>
-<section class="map pt-5 mt-5" id="map">
+<section class="map pt-5 mt-5 position-relative" id="map">
+	<div class="container">
+	<div class="map__form d-block rounded-3 mb-3 mb-sm-0 ">
+		<? $APPLICATION->IncludeComponent(
+			"bitrix:iblock.element.add.form",
+			"map-form",
+			array(
+				"AJAX_MODE" => 'Y',
+				"COMPONENT_TEMPLATE" => "map-form",
+				"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+				"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+				"CUSTOM_TITLE_DETAIL_PICTURE" => "",
+				"CUSTOM_TITLE_DETAIL_TEXT" => "",
+				"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+				"CUSTOM_TITLE_NAME" => "Введите имя",
+				"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+				"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+				"CUSTOM_TITLE_TAGS" => "",
+				"DEFAULT_INPUT_SIZE" => "30",
+				"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+				"ELEMENT_ASSOC" => "CREATED_BY",
+				"GROUPS" => array(0 => "2",),
+				"IBLOCK_ID" => "11",
+				"IBLOCK_TYPE" => "SYSTEM",
+				"LEVEL_LAST" => "Y",
+				"LIST_URL" => "",
+				"MAX_FILE_SIZE" => "0",
+				"MAX_LEVELS" => "100000",
+				"MAX_USER_ENTRIES" => "100000",
+				"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+				"PROPERTY_CODES" => array(0 => "1", 1 => "NAME",),
+				"PROPERTY_CODES_REQUIRED" => array(0 => "1", 1 => "NAME",),
+				"RESIZE_IMAGES" => "N",
+				"SEF_MODE" => "N",
+				"STATUS" => "ANY",
+				"STATUS_NEW" => "N",
+				"USER_MESSAGE_ADD" => "Спасибо, Ваша заявка успешно сохранена",
+				"USER_MESSAGE_EDIT" => "Спасибо, Ваша заявка успешно сохранена!",
+				"USE_CAPTCHA" => "N"
+			)
+		); ?>
+	</div>
+	</div>
+	
 	<? $APPLICATION->IncludeComponent(
 		"bitrix:map.yandex.view",
-		"",
+		".default",
 		array(
 			"API_KEY" => "",
-			"CONTROLS" => array("ZOOM", "MINIMAP", "TYPECONTROL", "SCALELINE"),
+			"CONTROLS" => array(
+				0 => "ZOOM"
+			),
 			"INIT_MAP_TYPE" => "MAP",
-			"MAP_DATA" => "a:3:{s:10:\"yandex_lat\";d:53.935188;s:10:\"yandex_lon\";d:27.428162;s:12:\"yandex_scale\";i:17;}",
-			"MAP_HEIGHT" => "410px",
+			"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:53.935188;s:10:\"yandex_lon\";d:27.428162;s:12:\"yandex_scale\";i:17;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:27.428162;s:3:\"LAT\";d:53.935188;s:4:\"TEXT\";s:0:\"\";}}}",
+			"MAP_HEIGHT" => "410",
 			"MAP_ID" => "",
 			"MAP_WIDTH" => "100%",
-			"OPTIONS" => array("ENABLE_SCROLL_ZOOM", "ENABLE_DBLCLICK_ZOOM", "ENABLE_DRAGGING")
-		)
+			"OPTIONS" => array(
+				0 => "ENABLE_SCROLL_ZOOM",
+				1 => "ENABLE_DBLCLICK_ZOOM",
+				2 => "ENABLE_DRAGGING",
+			),
+			"COMPONENT_TEMPLATE" => ".default"
+		),
+		false
 	); ?>
 </section>
 

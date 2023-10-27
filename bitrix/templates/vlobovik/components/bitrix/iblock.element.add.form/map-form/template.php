@@ -13,6 +13,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var CBitrixComponent $component */
 $this->setFrameMode(false);
 
+
 if (!empty($arResult["ERRORS"])) : ?>
 	<? ShowError(implode("<br>", $arResult["ERRORS"])) ?>
 <? endif;
@@ -22,9 +23,9 @@ if ($arResult["MESSAGE"] <> '') : ?>
 <form name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
 	<div class="d-flex flex-column justify-content-center ">
 		<div class="d-flex bg-white flex-column gap-2 p-3">
-			<div class="fs-22 text-center lh-15 ">ОСТАЛИСЬ ВОПРОСЫ?</div>
+			<div class="fs-22 text-center lh-15 "><?= GetMessage("QUESTIONS") ?></div>
 			<p class="fs-22 text-center lh-12">
-				С РАДОСТЬЮ ОТВЕТИМ!
+			<?= GetMessage("ANSWERS") ?>
 			</p>
 		</div>
 		<div class="promo__box-form p-3 ">
@@ -170,16 +171,17 @@ if ($arResult["MESSAGE"] <> '') : ?>
 									<? for ($i = 0; $i < $inputNum; $i++) {
 										// ...
 										$inputName = "PROPERTY[" . $propertyID . "][" . $i . "]";
-										if ($inputName === "PROPERTY[21][0]") {
+										if ($propertyID == 1 || $propertyID == 11) {
 									?>
-											<input class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="tel" name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
+											<input placeholder="<? if (intval($propertyID) > 0) : ?><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?><? else : ?><?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?><? endif ?>" class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="tel" name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
 										<?
 										} else {
 										?>
-											<input class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="text" name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
+											<input placeholder="<? if (intval($propertyID) > 0) : ?><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?><? else : ?><?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?><? endif ?>" class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="text" name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
 										<?
 										}
 										?>
+										<!--
 										<label for="<?= $inputName ?>" class="form-label form__label fs-16 text-secondary position-absolute top-50">
 											<? if (intval($propertyID) > 0) : ?>
 												<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?>
@@ -187,6 +189,7 @@ if ($arResult["MESSAGE"] <> '') : ?>
 												<?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?>
 											<? endif ?>
 										</label>
+										-->
 									<?
 									}
 									?>
@@ -311,3 +314,45 @@ if ($arResult["MESSAGE"] <> '') : ?>
 		</div>
 	</div>
 </form>
+
+
+<div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content rounded-3 ">
+			<div class="modal-header pt-3 px-3 pb-0">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+			</div>
+			<div class="modal-body d-flex flex-column align-items-center gap-2 pb-4 px-3 pt-0">
+				<div class="">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/bravo.svg" alt="bravo" class="">
+				</div>
+				<h2 class="fs-26 lh-15 fw-600"><span class=" text-primary">Спасибо,</span> Ваша заявка принята.</h2>
+				<p class="fs-18"><?= GetMessage("PHONE") ?></p>
+				<div class="mt-5">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo.svg" alt="logo" class="mw-100">
+				</div>
+
+			</div>
+			<div class="modal-footer d-flex justify-content-center">
+
+				<?
+				$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
+				?>
+				<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $A1); ?>" class="d-block mb-1">
+					<div class="ff-roboto">
+						<span class="link d-inline-block text-nowrap text-success "><?= $A1; ?>-А1 </span>
+					</div>
+				</a>
+				<?
+				$MTC = \Victory\Options\CVictoryOptions::getOptionValue('MTC_' . SITE_ID);
+				?>
+				<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $MTC); ?>" class="d-block">
+					<div class="ff-roboto">
+						<span class="link d-inline-block text-nowrap text-success "><?= $MTC; ?>-МТС </span>
+					</div>
+				</a>
+
+			</div>
+		</div>
+	</div>
+</div>

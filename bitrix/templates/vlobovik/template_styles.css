@@ -24,7 +24,7 @@
   --bs-gray-900: #212529;
   --bs-primary: #2b579a;
   --bs-secondary: #77797c;
-  --bs-success: #d2dcea;
+  --bs-success: #676767;
   --bs-info: #6a6a6a;
   --bs-warning: #faed19;
   --bs-danger: #dc3545;
@@ -32,7 +32,7 @@
   --bs-dark: #262722;
   --bs-primary-rgb: 43, 87, 154;
   --bs-secondary-rgb: 119, 121, 124;
-  --bs-success-rgb: 210, 220, 234;
+  --bs-success-rgb: 103, 103, 103;
   --bs-info-rgb: 106, 106, 106;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
@@ -201,7 +201,7 @@ h6 {
 }
 .wrapper > main {
   flex: 1 1 auto;
-  padding-top: 155px;
+  padding-top: 200px;
 }
 .wrapper > * {
   min-width: 0;
@@ -227,6 +227,9 @@ h6 {
 }
 .fs-24 {
   font-size: 24px;
+}
+.fs-26 {
+  font-size: 26px;
 }
 .fs-32 {
   font-size: 32px;
@@ -824,8 +827,8 @@ body.popup-show::after {
 .map__form {
   top: 12%;
   right: 5%;
-  width: 75%;
-  max-width: 600px;
+  width: 100%;
+  
 }
 
 .header {
@@ -967,6 +970,41 @@ body.popup-show::after {
   stroke-width: 4px;
   transition: all .2s  ease-in-out;
 }
+.modal-backdrop{
+  display: none !important;
+}
+.btn-close {
+  box-sizing: content-box;
+  width: 36px;
+  height: 36px; 
+  color: #000;
+  background: #2B579A url("img/icons/close.svg") center/31px no-repeat;
+  border: 0;
+  border-radius: 50%;
+  opacity: 1;
+}
+.modal-header {
+ 
+  border-bottom: none;
+  border-top-left-radius: var(--bs-modal-inner-border-radius);
+  border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
+.modal-footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
+  background-color: rgba(43, 87, 154, 0.17);;
+  border-top: none;
+  border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+  border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+}
+.text-success:hover {
+  
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
 @media only screen and (min-width: 575px) {
   .popup__content:after {
     height: 70%;
@@ -986,9 +1024,11 @@ body.popup-show::after {
     bottom: -0.5rem;
   }
   .map__form {
+    position: absolute;
     top: 12%;
     right: 2%;
     width: 40%;
+    z-index: 1;
     max-width: 500px;
   }
 }
