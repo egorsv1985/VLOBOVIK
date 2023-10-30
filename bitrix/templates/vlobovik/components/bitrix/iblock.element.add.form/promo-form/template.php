@@ -17,7 +17,15 @@ if (!empty($arResult["ERRORS"])) : ?>
 	<? ShowError(implode("<br>", $arResult["ERRORS"])) ?>
 <? endif;
 if ($arResult["MESSAGE"] <> '') : ?>
+	<script>
+		jQuery(document).ready(function() {
+			$("#callback").modal("hide"); // Закрываем модальное окно с id "callback"
+			$("#popup").modal("show"); // Открываем модальное окно с id "popup"
+		});
+	</script>
+	<!--
 	<? ShowNote($arResult["MESSAGE"]) ?>
+-->
 <? endif ?>
 <form name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
 	<div class="d-flex flex-column justify-content-center">
@@ -169,26 +177,26 @@ if ($arResult["MESSAGE"] <> '') : ?>
 								<? for ($i = 0; $i < $inputNum; $i++) {
 									// ...
 									$inputName = "PROPERTY[" . $propertyID . "][" . $i . "]";
-									if ($inputName === "PROPERTY[1][0]") {
+									if ($propertyID == 1 || $propertyID == 11) {
 								?>
-										<input class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="tel"  name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
+										<input placeholder="<? if (intval($propertyID) > 0) : ?><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?><? else : ?><?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?><? endif ?>" class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="tel" name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
 									<?
 									} else {
 									?>
-										<input class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="text" name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
+										<input placeholder="<? if (intval($propertyID) > 0) : ?><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?><? else : ?><?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?><? endif ?>" class="form-control form__input bg-white rounded-2 text-info p-3 h-100" type="text" name="<?= $inputName ?>" id="<?= $inputName ?>" placeholder="" value="<?= $value ?>" required>
 									<?
 									}
 									?>
-									<label for="<?= $inputName ?>" class="form-label form__label fs-16 text-secondary position-absolute top-50">
+									<!-- <label for="<?= $inputName ?>" class="form-label form__label fs-16 text-secondary position-absolute top-50">
 										<? if (intval($propertyID) > 0) : ?>
 											<?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?>
 										<? else : ?>
 											<?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?>
 										<? endif ?>
-									</label>
+									</label> -->
 								<?
 								}
-								?>								
+								?>
 								<?
 								if ($arResult["PROPERTY_LIST_FULL"][$propertyID]["USER_TYPE"] == "DateTime") : ?>
 									<?

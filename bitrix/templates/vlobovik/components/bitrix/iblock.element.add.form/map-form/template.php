@@ -18,14 +18,22 @@ if (!empty($arResult["ERRORS"])) : ?>
 	<? ShowError(implode("<br>", $arResult["ERRORS"])) ?>
 <? endif;
 if ($arResult["MESSAGE"] <> '') : ?>
-	<? ShowNote($arResult["MESSAGE"]) ?>
+	<script>
+		jQuery(document).ready(function() {
+			$("#callback").modal("hide"); // Закрываем модальное окно с id "callback"
+			$("#popup").modal("show"); // Открываем модальное окно с id "popup"
+		});
+	</script>
+	<!--
+		<? ShowNote($arResult["MESSAGE"]) ?>
+	-->
 <? endif ?>
 <form name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
 	<div class="d-flex flex-column justify-content-center ">
 		<div class="d-flex bg-white flex-column gap-2 p-3">
 			<div class="fs-22 text-center lh-15 "><?= GetMessage("QUESTIONS") ?></div>
 			<p class="fs-22 text-center lh-12">
-			<?= GetMessage("ANSWERS") ?>
+				<?= GetMessage("ANSWERS") ?>
 			</p>
 		</div>
 		<div class="promo__box-form p-3 ">
