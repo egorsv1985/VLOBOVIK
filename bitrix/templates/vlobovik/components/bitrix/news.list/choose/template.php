@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 // print_r($arResult);
 ?>
-<section class="choose py-5">
+<section class="choose py-5" id="choose">
 	<div class="container">
 		<?
 		$arResult["NAME"] = str_replace(array("RU_", "BY_"), "", $arResult["NAME"]);

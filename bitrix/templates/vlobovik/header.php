@@ -26,9 +26,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 if (CModule::IncludeModule("victory.options")) {
 }
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -45,18 +43,26 @@ if (CModule::IncludeModule("victory.options")) {
 	<meta name="format-detection" content="telephone=no">
 	<link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH ?>/favicon/favicon.ico">
 
+	<script>
+		function modalThank() {
+			$("#callback").modal("hide"); // Закрываем модальное окно с id "callback"
+			$("#popup").modal("show"); // Открываем модальное окно с id "popup"
+		}
+
+	</script>
+
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-KQBJ55');</script>
+	})(window,document,'script','dataLayer','GTM-WV55GLTV');</script>
 	<!-- End Google Tag Manager -->
 </head>
 
 <body>
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQBJ55"
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV55GLTV"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 	<div id="panel">
@@ -224,6 +230,7 @@ if (CModule::IncludeModule("victory.options")) {
 										"bitrix:iblock.element.add.form",
 										"promo-form",
 										array(
+											"AJAX_MODE" => "Y",
 											"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
 											"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
 											"CUSTOM_TITLE_DETAIL_PICTURE" => "",
