@@ -4,7 +4,10 @@ if (!window.BX_YMapAddPlacemark) {
 
     if (!arPlacemark.LAT || !arPlacemark.LON) return false;
 
-    var props = { iconCaption: "vlobovik.by" };
+    var props = {
+      iconCaption: 'vlobovik.by',
+      iconContent: 'vlobovik.by'
+    };
     if (null != arPlacemark.TEXT && arPlacemark.TEXT.length > 0) {
       var value_view = "";
 
@@ -18,13 +21,21 @@ if (!window.BX_YMapAddPlacemark) {
       props.hintContent = value_view;
     }
 
+    console.log(props);
+
+
     var obPlacemark = new ymaps.Placemark(
       [arPlacemark.LAT, arPlacemark.LON],
       props,
-      { balloonCloseButton: true, preset: "islands#carIcon" }
+      {
+        balloonCloseButton: true,
+        preset: "islands#blueAutoIcon"
+        
+      }
     );
 
     map.geoObjects.add(obPlacemark);
+
 
     return obPlacemark;
   };
