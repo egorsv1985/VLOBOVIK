@@ -94,7 +94,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						"STATUS_NEW" => "N",
 						"LIST_URL" => "",
 						"USE_CAPTCHA" => "N",
-						"USER_MESSAGE_EDIT" => "",
+						"USER_MESSAGE_EDIT" => "Спасибо, Ваша заявка успешно сохранена",
 						"USER_MESSAGE_ADD" => "Мы с вами скоро свяжемся",
 						"DEFAULT_INPUT_SIZE" => "30",
 						"RESIZE_IMAGES" => "N",
@@ -137,6 +137,50 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		</div>
 	</div>
 </div>
+
+
+
+<div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content rounded-3 ">
+			<div class="modal-header pt-3 px-3 pb-0">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+			</div>
+			<div class="modal-body d-flex flex-column align-items-center gap-2 pb-4 px-3 pt-0">
+				<div class="">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/bravo.svg" alt="bravo" class="">
+				</div>
+				<h2 class="fs-26 lh-15 fw-600"><span class=" text-primary">Спасибо,</span> Ваша заявка принята.</h2>
+				<p class="fs-18"><?= GetMessage("PHONE") ?></p>
+				<div class="mt-5">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo.svg" alt="logo" class="mw-100">
+				</div>
+
+			</div>
+			<div class="modal-footer d-flex justify-content-center">
+
+				<?
+				$A1 = \Victory\Options\CVictoryOptions::getOptionValue('A1_' . SITE_ID);
+				?>
+				<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $A1); ?>" class="d-block mb-1">
+					<div class="ff-roboto">
+						<span class="link d-inline-block text-nowrap text-success "><?= $A1; ?>-А1 </span>
+					</div>
+				</a>
+				<?
+				$MTC = \Victory\Options\CVictoryOptions::getOptionValue('MTC_' . SITE_ID);
+				?>
+				<a href="tel:<?= str_replace(array(' ', '(', ')', '-'), '', $MTC); ?>" class="d-block">
+					<div class="ff-roboto">
+						<span class="link d-inline-block text-nowrap text-success "><?= $MTC; ?>-МТС </span>
+					</div>
+				</a>
+
+			</div>
+		</div>
+	</div>
+</div>
+
 
 </body>
 

@@ -526,27 +526,27 @@ $APPLICATION->IncludeFile($APPLICATION->GetCurDir() . "includes/partners.php");
 	</div>
 	
 	<? $APPLICATION->IncludeComponent(
-		"bitrix:map.yandex.view",
-		".default",
-		array(
-			"API_KEY" => "",
-			"CONTROLS" => array(
-				0 => "ZOOM"
-			),
-			"INIT_MAP_TYPE" => "MAP",
-			"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:53.935188;s:10:\"yandex_lon\";d:27.428162;s:12:\"yandex_scale\";i:17;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:27.428162;s:3:\"LAT\";d:53.935188;s:4:\"TEXT\";s:0:\"\";}}}",
-			"MAP_HEIGHT" => "410",
-			"MAP_ID" => "",
-			"MAP_WIDTH" => "100%",
-			"OPTIONS" => array(
-				0 => "ENABLE_SCROLL_ZOOM",
-				1 => "ENABLE_DBLCLICK_ZOOM",
-				2 => "ENABLE_DRAGGING",
-			),
-			"COMPONENT_TEMPLATE" => ".default"
+	"bitrix:map.yandex.view", 
+	".default", 
+	array(
+		"API_KEY" => "",
+		"CONTROLS" => array(
+			0 => "ZOOM",
 		),
-		false
-	); ?>
+		"INIT_MAP_TYPE" => "MAP",
+		"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:53.976984;s:10:\"yandex_lon\";d:27.537612;s:12:\"yandex_scale\";i:18;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:27.537612;s:3:\"LAT\";d:53.976984;s:4:\"TEXT\";s:0:\"\";}}}",
+		"MAP_HEIGHT" => "410",
+		"MAP_ID" => "",
+		"MAP_WIDTH" => "100%",
+		"OPTIONS" => array(
+			0 => "ENABLE_SCROLL_ZOOM",
+			1 => "ENABLE_DBLCLICK_ZOOM",
+			2 => "ENABLE_DRAGGING",
+		),
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+); ?>
 </section>
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');

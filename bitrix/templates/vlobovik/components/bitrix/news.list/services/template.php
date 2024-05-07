@@ -38,21 +38,6 @@ $this->setFrameMode(true);
 							<? if ($arItem["DETAIL_TEXT"]) : // Если DETAIL_TEXT заполнено, то выводим модальное окно 
 							?>
 								<a href="#modal-<?= $arItem['ID'] ?>" type="button" class="w-100 d-block h-100" data-bs-toggle="modal" data-bs-target="#modal-<?= $arItem['ID'] ?>">
-									<!-- Modal -->
-									<div class="modal fade" id="modal-<?= $arItem['ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-										<div class="modal-dialog modal-dialog-centered" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-													</button>
-												</div>
-												<div class="modal-body">
-													<?= $arItem["DETAIL_TEXT"] ?>
-												</div>
-											</div>
-										</div>
-									</div>
 								<? else : // Если DETAIL_TEXT пусто, то просто пустой блок 
 								?>
 								<? endif; ?>
@@ -71,6 +56,21 @@ $this->setFrameMode(true);
 									</div>
 								</div>
 								</a>
+					</div>
+				</div>
+				<!-- Modal -->
+				<div class="modal fade" id="modal-<?= $arItem['ID'] ?>" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+
+								</button>
+							</div>
+							<div class="modal-body">
+								<?= $arItem["DETAIL_TEXT"] ?>
+							</div>
+						</div>
 					</div>
 				</div>
 			<? endforeach; ?>
